@@ -552,11 +552,88 @@
       margin-bottom: 24px;
     }
 
-    .admin-form-grid input {
+    .admin-form-grid input,
+    .admin-form-grid textarea {
       padding: 10px 12px;
       border: 1px solid #ffc107;
       border-radius: 4px;
       font-size: 0.9em;
+      font-family: inherit;
+    }
+
+    .admin-form-grid textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Messages Section */
+    .messages-section {
+      background: #e3f2fd;
+      border: 2px dashed #2196f3;
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .messages-section h4 {
+      font-size: 1em;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .message-item {
+      background: #ffffff;
+      border-left: 4px solid #2196f3;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 2px;
+    }
+
+    .message-item-name {
+      font-weight: 700;
+      color: #1a1a1a;
+      font-size: 0.9em;
+      margin-bottom: 4px;
+    }
+
+    .message-item-text {
+      color: #555;
+      font-size: 0.9em;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .message-item-email {
+      font-size: 0.8em;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    .reply-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .reply-form textarea {
+      padding: 8px 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 0.85em;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 60px;
+      grid-column: 1 / -1;
+    }
+
+    .reply-form .btn {
+      padding: 8px 16px;
+      font-size: 0.85em;
+      grid-column: 1 / -1;
     }
 
     /* Modal */
@@ -713,6 +790,10 @@
       .form-container {
         padding: 30px 20px;
       }
+
+      .reply-form {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media print {
@@ -867,6 +948,10 @@
               <label>Project Specifications & Design Files <span class="required">*</span></label>
               <textarea id="description" placeholder="Detailed project description, CAD file links, design specifications, dimensions, tolerance requirements, and any special instructions." required></textarea>
             </div>
+            <div class="form-group full">
+              <label>Additional Notes or Concerns</label>
+              <textarea id="additionalNotes" placeholder="Let us know if you have concerns about color availability, print duration, or any other considerations. We'll let you know if we can accommodate your request."></textarea>
+            </div>
           </div>
           <button type="submit" class="btn" style="width: 100%; padding: 16px;">Submit Request</button>
         </form>
@@ -884,19 +969,39 @@
         
         <div id="adminPanel" class="admin-panel">
           <h3>📋 Admin Panel</h3>
-          <div class="admin-form-grid">
-            <input type="text" id="pickupName" placeholder="Customer Name">
-            <input type="text" id="pickupItem" placeholder="Project Description">
-            <input type="datetime-local" id="pickupDate">
-            <input type="text" id="pickupLocation" placeholder="Pickup Location">
-            <input type="number" id="pickupCost" placeholder="Amount Due" step="0.01" min="0">
-            <input type="text" id="pickupNotes" placeholder="Notes (optional)">
-            <button class="btn btn-small" onclick="addPickupOrder()" style="grid-column: 1 / -1;">Add Completed Order</button>
+
+          <!-- Messages Section -->
+          <div class="messages-section">
+            <h4>💬 Customer Messages</h4>
+            <div id="messagesContainer">
+              <div style="text-align: center; color: #999; padding: 20px; font-size: 0.9em;">
+                No customer messages yet
+              </div>
+            </div>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-            <input type="text" id="pricingName" placeholder="Service name">
-            <input type="number" id="pricingCost" placeholder="Price" step="0.01" min="0">
-            <button class="btn btn-small" onclick="addPricing()" style="grid-column: 1 / -1;">Add Pricing</button>
+
+          <!-- Add Completed Order -->
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-size: 1em; font-weight: 700; margin-bottom: 12px;">Add Completed Order</h4>
+            <div class="admin-form-grid">
+              <input type="text" id="pickupName" placeholder="Customer Name">
+              <input type="text" id="pickupItem" placeholder="Project Description">
+              <input type="datetime-local" id="pickupDate">
+              <input type="text" id="pickupLocation" placeholder="Pickup Location">
+              <input type="number" id="pickupCost" placeholder="Amount Due" step="0.01" min="0">
+              <input type="text" id="pickupNotes" placeholder="Notes (optional)">
+              <button class="btn btn-small" onclick="addPickupOrder()" style="grid-column: 1 / -1;">Add Completed Order</button>
+            </div>
+          </div>
+
+          <!-- Add Pricing -->
+          <div>
+            <h4 style="font-size: 1em; font-weight: 700; margin-bottom: 12px;">Add Pricing</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+              <input type="text" id="pricingName" placeholder="Service name">
+              <input type="number" id="pricingCost" placeholder="Price" step="0.01" min="0">
+              <button class="btn btn-small" onclick="addPricing()" style="grid-column: 1 / -1;">Add Pricing</button>
+            </div>
           </div>
         </div>
 
@@ -935,7 +1040,7 @@
     <div class="modal-content">
       <span class="modal-close" onclick="closeModal()">&times;</span>
       <h2>Request Submitted</h2>
-      <p>Thank you for submitting your print request. Our team will review your specifications and contact you within 24 business hours with a detailed quote, material recommendations, and production timeline. We look forward to working with you.</p>
+      <p>Thank you for submitting your print request. Our team will review your specifications and contact you within 24 business hours with a detailed quote, material recommendations, and production timeline.</p>
       <button class="btn" onclick="closeModal()" style="width: 100%; margin-top: 24px;">Close</button>
     </div>
   </div>
@@ -967,6 +1072,55 @@
       } else {
         alert('Incorrect password');
       }
+    }
+
+    // Message Functions
+    function loadMessages() {
+      const messages = JSON.parse(localStorage.getItem('messages')) || [];
+      const container = document.getElementById('messagesContainer');
+      
+      if (messages.length === 0) {
+        container.innerHTML = `<div style="text-align: center; color: #999; padding: 20px; font-size: 0.9em;">No customer messages yet</div>`;
+        return;
+      }
+
+      container.innerHTML = messages.map((msg, index) => `
+        <div class="message-item">
+          <div class="message-item-name">${msg.name}</div>
+          <div class="message-item-email">${msg.email}</div>
+          <div class="message-item-text"><strong>Message:</strong> ${msg.message}</div>
+          ${msg.reply ? `<div class="message-item-text" style="background: #f0f0f0; padding: 8px; border-radius: 4px; color: #31a645;"><strong>Your Reply:</strong> ${msg.reply}</div>` : ''}
+          ${isAdmin && !msg.reply ? `
+            <div class="reply-form">
+              <textarea id="reply-${index}" placeholder="Type your response here..." style="grid-column: 1 / -1;"></textarea>
+              <button class="btn btn-small" onclick="sendReply(${index})" style="grid-column: 1 / -1;">Send Reply</button>
+            </div>
+          ` : ''}
+        </div>
+      `).join('');
+    }
+
+    function sendReply(index) {
+      const replyText = document.getElementById(`reply-${index}`).value.trim();
+      if (!replyText) {
+        alert('Please type a response');
+        return;
+      }
+
+      const messages = JSON.parse(localStorage.getItem('messages')) || [];
+      if (messages[index]) {
+        messages[index].reply = replyText;
+        localStorage.setItem('messages', JSON.stringify(messages));
+        loadMessages();
+        alert('Reply sent to customer!');
+      }
+    }
+
+    function addMessage(name, email, message) {
+      const messages = JSON.parse(localStorage.getItem('messages')) || [];
+      messages.push({ name, email, message, reply: null, timestamp: new Date().toLocaleString() });
+      localStorage.setItem('messages', JSON.stringify(messages));
+      loadMessages();
     }
 
     // Pricing Functions
@@ -1014,49 +1168,23 @@
       loadPricing();
     }
 
-    // Pickup Functions
-    function loadPickupOrders() {
-      const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-      const container = document.getElementById('pickupOrders');
-      
-      if (orders.length === 0) {
-        container.innerHTML = `<div class="empty-state" style="grid-column: 1 / -1;"><div class="empty-state-icon">📦</div><p>No completed orders at this time</p></div>`;
-        return;
-      }
-
-      container.innerHTML = orders.map((order, index) => `
-        <div class="order-card">
-          <div class="order-status">✓ READY FOR PICKUP</div>
-          <h4>${order.name}</h4>
-          <div class="order-detail"><strong>Project:</strong> ${order.item}</div>
-          <div class="order-detail"><strong>Ready:</strong> ${new Date(order.readyDate).toLocaleDateString()} at ${new Date(order.readyDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
-          ${order.cost ? `<div class="order-detail"><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</div>` : ''}
-          <div class="order-location">
-            <span class="label">📍 Pickup Location</span>
-            <p>${order.location}</p>
-            ${order.notes ? `<p style="margin-top: 8px; font-size: 0.9em; color: #666; font-style: italic;">${order.notes}</p>` : ''}
-          </div>
-          ${isAdmin ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${index})" style="width: 100%; margin-top: 16px;">Delete</button>` : ''}
-        </div>
-      `).join('');
-    }
-
+    // Order Functions
     function addPickupOrder() {
       if (!isAdmin) return;
       const name = document.getElementById('pickupName').value.trim();
       const item = document.getElementById('pickupItem').value.trim();
-      const readyDate = document.getElementById('pickupDate').value;
+      const date = document.getElementById('pickupDate').value;
       const location = document.getElementById('pickupLocation').value.trim();
       const cost = document.getElementById('pickupCost').value.trim();
       const notes = document.getElementById('pickupNotes').value.trim();
 
-      if (!name || !item || !readyDate || !location) {
-        alert('Fill in all required fields');
+      if (!name || !item || !date || !location || !cost) {
+        alert('Please fill in all required fields');
         return;
       }
 
       const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-      orders.push({ name, item, readyDate, location, cost, notes });
+      orders.push({ name, item, date, location, cost, notes });
       localStorage.setItem('pickupOrders', JSON.stringify(orders));
 
       document.getElementById('pickupName').value = '';
@@ -1067,6 +1195,32 @@
       document.getElementById('pickupNotes').value = '';
 
       loadPickupOrders();
+    }
+
+    function loadPickupOrders() {
+      const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
+      const container = document.getElementById('pickupOrders');
+
+      if (orders.length === 0) {
+        container.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📦</div><p>No completed orders at this time</p></div>`;
+        return;
+      }
+
+      container.innerHTML = orders.map((order, index) => `
+        <div class="order-card">
+          <span class="order-status">Ready for Pickup</span>
+          <h4>${order.name}</h4>
+          <div class="order-detail"><strong>Project:</strong> ${order.item}</div>
+          <div class="order-detail"><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</div>
+          ${order.notes ? `<div class="order-detail"><strong>Notes:</strong> ${order.notes}</div>` : ''}
+          <div class="order-detail"><strong>Pickup Date:</strong> ${new Date(order.date).toLocaleString()}</div>
+          <div class="order-location">
+            <span class="label">📍 Pickup Location</span>
+            <p>${order.location}</p>
+          </div>
+          ${isAdmin ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${index})" style="margin-top: 12px; width: 100%;">Remove Order</button>` : ''}
+        </div>
+      `).join('');
     }
 
     function deleteOrder(index) {
@@ -1081,19 +1235,13 @@
     document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        projectName: document.getElementById('projectName').value,
-        material: document.getElementById('material').value,
-        color: document.getElementById('color').value,
-        quantity: document.getElementById('quantity').value,
-        description: document.getElementById('description').value
-      };
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('additionalNotes').value.trim();
 
-      const requests = JSON.parse(localStorage.getItem('printRequests')) || [];
-      requests.push({ ...formData, submittedAt: new Date().toISOString() });
-      localStorage.setItem('printRequests', JSON.stringify(requests));
+      if (message) {
+        addMessage(name, email, message);
+      }
 
       document.getElementById('orderForm').reset();
       document.getElementById('successModal').classList.add('show');
@@ -1104,9 +1252,11 @@
     }
 
     // Initialize
-    loadPricing();
-    loadPickupOrders();
+    document.addEventListener('DOMContentLoaded', function() {
+      loadPricing();
+      loadPickupOrders();
+      loadMessages();
+    });
   </script>
-
 </body>
 </html>
