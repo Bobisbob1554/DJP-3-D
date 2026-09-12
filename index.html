@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Print Services - Custom Orders</title>
+  <title>3D Manufacturing Services - Professional Printing Solutions</title>
   <style>
     * {
       margin: 0;
@@ -11,249 +11,340 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: linear-gradient(135deg, #f8f9f8 0%, #f0f2f0 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #f8f9fa;
       min-height: 100vh;
-      padding: 20px;
       color: #1a1a1a;
+      line-height: 1.6;
     }
 
-    header {
-      background: linear-gradient(135deg, #ffffff 0%, #f5f7f5 100%);
-      padding: 50px 20px;
-      border-radius: 4px;
-      text-align: center;
-      margin-bottom: 50px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border-bottom: 3px solid #31a645;
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 16px 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
     }
 
-    h1 {
-      color: #31a645;
-      font-size: 2.8em;
-      margin-bottom: 8px;
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3em;
       font-weight: 700;
+      color: #31a645;
       letter-spacing: -0.5px;
     }
 
-    .tagline {
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
       color: #555;
-      font-size: 1.1em;
-      font-weight: 300;
-      letter-spacing: 0.3px;
+      font-weight: 500;
+      font-size: 0.95em;
+      transition: color 0.3s;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section {
-      background: #ffffff;
-      padding: 50px;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      margin-bottom: 40px;
-      border-top: 3px solid #31a645;
-    }
-
-    .section h2 {
+    .nav-links a:hover {
       color: #31a645;
-      margin-bottom: 35px;
-      font-size: 2em;
-      font-weight: 700;
-      letter-spacing: -0.3px;
     }
 
-    .section h3 {
-      color: #31a645;
-      font-size: 1.3em;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-
-    .section p {
-      color: #666;
-      line-height: 1.6;
-      font-size: 0.98em;
-    }
-
-    /* Capabilities Grid */
-    .capabilities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-bottom: 30px;
-    }
-
-    .capability-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f9fbf9 100%);
-      border: 1px solid #e0e0e0;
-      padding: 30px;
-      border-radius: 4px;
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f5f7f5 100%);
+      padding: 140px 40px 100px;
       text-align: center;
-      transition: all 0.3s ease;
-      cursor: default;
+      border-bottom: 1px solid #e0e0e0;
+      margin-top: 60px;
     }
 
-    .capability-card:hover {
-      border-color: #31a645;
-      box-shadow: 0 4px 16px rgba(49, 166, 69, 0.12);
+    .hero h1 {
+      font-size: 3.2em;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 1.3em;
+      color: #666;
+      font-weight: 300;
+      margin-bottom: 32px;
+      letter-spacing: 0.2px;
+    }
+
+    .hero .cta {
+      display: inline-block;
+      background: #31a645;
+      color: white;
+      padding: 16px 48px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1em;
+      transition: all 0.3s;
+      border: 2px solid #31a645;
+    }
+
+    .hero .cta:hover {
+      background: #2a8f38;
+      box-shadow: 0 8px 24px rgba(49, 166, 69, 0.2);
       transform: translateY(-2px);
     }
 
-    .capability-card .icon {
-      font-size: 2.8em;
-      margin-bottom: 15px;
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section {
+      margin: 80px auto;
+    }
+
+    .section-title {
+      font-size: 2.4em;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 50px;
+      font-weight: 300;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 40px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #31a645;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .service-card:hover {
+      border-color: #31a645;
+      box-shadow: 0 8px 32px rgba(49, 166, 69, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      font-size: 3em;
+      margin-bottom: 20px;
       display: block;
     }
 
-    .capability-card h3 {
-      font-size: 1.1em;
+    .service-card h3 {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #1a1a1a;
       margin-bottom: 12px;
-      color: #31a645;
     }
 
-    .capability-card p {
+    .service-card p {
       color: #666;
-      font-size: 0.95em;
-      line-height: 1.5;
+      font-size: 0.98em;
+      line-height: 1.7;
     }
 
-    .timeline {
-      background: #f9fbf9;
-      padding: 30px;
+    /* Timeline */
+    .timeline-container {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
       border-radius: 4px;
-      margin-top: 30px;
-      border-left: 3px solid #31a645;
+      padding: 40px;
+      margin-bottom: 60px;
     }
 
-    .timeline h3 {
-      color: #31a645;
-      margin-bottom: 20px;
+    .timeline-container h3 {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
     }
 
     .timeline-item {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+      padding-left: 40px;
     }
 
-    .timeline-item:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 24px;
+      height: 24px;
+      background: #31a645;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 2px #31a645;
     }
 
-    .timeline-icon {
-      font-size: 1.6em;
-      min-width: 35px;
-      flex-shrink: 0;
+    .timeline-item h4 {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
     }
 
-    .timeline-content h4 {
-      color: #31a645;
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-
-    .timeline-content p {
+    .timeline-item p {
       color: #666;
       font-size: 0.95em;
+      line-height: 1.6;
     }
 
     /* Pricing Section */
-    .pricing-section {
-      background: #f9fbf9;
-      padding: 30px;
+    .pricing-container {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
       border-radius: 4px;
-      margin-top: 30px;
-      border-left: 3px solid #31a645;
+      padding: 40px;
+      margin-bottom: 60px;
+    }
+
+    .pricing-container h3 {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+    }
+
+    .pricing-list {
+      display: grid;
+      gap: 16px;
     }
 
     .pricing-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 0;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .pricing-item:last-child {
-      border-bottom: none;
+      padding: 18px;
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
     }
 
     .pricing-item-name {
-      color: #1a1a1a;
       font-weight: 600;
-      font-size: 0.98em;
+      color: #1a1a1a;
+      font-size: 1em;
     }
 
     .pricing-item-price {
-      color: #31a645;
-      font-weight: 700;
       font-size: 1.2em;
-    }
-
-    .add-pricing-form {
-      background: #f9fbf9;
-      padding: 20px;
-      border-radius: 4px;
-      margin-top: 20px;
-      border: 1px dashed #31a645;
-    }
-
-    .pricing-input-group {
-      display: grid;
-      grid-template-columns: 1fr 1fr auto;
-      gap: 12px;
-      align-items: flex-end;
-    }
-
-    .pricing-input-group input {
-      padding: 10px 12px;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
-      font-size: 0.95em;
-      background: #ffffff;
-      color: #1a1a1a;
-    }
-
-    .pricing-input-group input:focus {
-      outline: none;
-      border-color: #31a645;
-      box-shadow: 0 0 0 3px rgba(49, 166, 69, 0.1);
+      font-weight: 700;
+      color: #31a645;
     }
 
     /* Form Section */
+    .form-container {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 50px;
+      margin-bottom: 60px;
+    }
+
+    .form-container h3 {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: #1a1a1a;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
     .form-group {
-      margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
     }
 
     .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #1a1a1a;
       font-weight: 600;
       font-size: 0.95em;
+      color: #1a1a1a;
+      margin-bottom: 8px;
       letter-spacing: 0.2px;
+    }
+
+    .form-group label .required {
+      color: #dc3545;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
-      width: 100%;
       padding: 12px 14px;
       border: 1px solid #d0d0d0;
       border-radius: 4px;
       font-size: 0.95em;
       font-family: inherit;
-      transition: all 0.3s;
       background: #ffffff;
       color: #1a1a1a;
+      transition: all 0.3s;
     }
 
     .form-group input:focus,
@@ -261,18 +352,18 @@
     .form-group textarea:focus {
       outline: none;
       border-color: #31a645;
-      box-shadow: 0 0 0 3px rgba(49, 166, 69, 0.1);
+      box-shadow: 0 0 0 4px rgba(49, 166, 69, 0.08);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 130px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 140px;
+      font-family: inherit;
     }
 
     /* Buttons */
     .btn {
-      background: linear-gradient(135deg, #31a645 0%, #2a8f38 100%);
+      background: #31a645;
       color: white;
       border: none;
       padding: 14px 32px;
@@ -281,23 +372,17 @@
       font-size: 1em;
       font-weight: 600;
       transition: all 0.3s;
-      width: 100%;
       letter-spacing: 0.3px;
     }
 
     .btn:hover {
-      box-shadow: 0 4px 16px rgba(49, 166, 69, 0.25);
-      transform: translateY(-1px);
+      background: #2a8f38;
+      box-shadow: 0 8px 24px rgba(49, 166, 69, 0.2);
+      transform: translateY(-2px);
     }
 
     .btn:active {
       transform: translateY(0);
-    }
-
-    .btn-small {
-      width: auto;
-      padding: 8px 16px;
-      font-size: 0.9em;
     }
 
     .btn-secondary {
@@ -308,255 +393,173 @@
 
     .btn-secondary:hover {
       background: #e8e8e8;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-small {
+      padding: 8px 16px;
+      font-size: 0.9em;
+    }
+
+    .btn-delete {
+      background: #dc3545;
+      color: white;
+    }
+
+    .btn-delete:hover {
+      background: #c82333;
     }
 
     /* Orders Grid */
+    .orders-container {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 40px;
+      margin-bottom: 60px;
+    }
+
+    .orders-container h3 {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+    }
+
     .orders-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
     }
 
     .order-card {
       background: #ffffff;
       border: 1px solid #e0e0e0;
       border-radius: 4px;
-      padding: 25px;
+      padding: 24px;
       position: relative;
-      overflow: hidden;
       transition: all 0.3s;
     }
 
-    .order-card:hover {
-      box-shadow: 0 4px 16px rgba(49, 166, 69, 0.12);
-      border-color: #31a645;
-    }
-
-    .order-card.ready {
-      border-left: 4px solid #31a645;
-    }
-
-    .order-card.ready::before {
-      content: "✓";
+    .order-card::before {
+      content: '';
       position: absolute;
-      top: -12px;
-      right: -8px;
-      font-size: 3.5em;
-      color: #31a645;
-      opacity: 0.15;
-      font-weight: bold;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: #31a645;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .order-card:hover {
+      box-shadow: 0 8px 24px rgba(49, 166, 69, 0.12);
+      border-color: #31a645;
     }
 
     .order-status {
       display: inline-block;
       padding: 6px 14px;
+      background: #e8f5e9;
+      color: #31a645;
       border-radius: 20px;
       font-size: 0.8em;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
       letter-spacing: 0.5px;
     }
 
-    .order-status.ready {
-      background: #e8f5e9;
-      color: #31a645;
-    }
-
-    .order-card h3 {
-      color: #1a1a1a;
-      margin-bottom: 15px;
-      font-size: 1.2em;
+    .order-card h4 {
+      font-size: 1.1em;
       font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 14px;
     }
 
-    .order-details {
-      color: #555;
+    .order-detail {
       font-size: 0.95em;
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    .order-details p {
+      color: #555;
       margin-bottom: 8px;
     }
 
-    .order-details strong {
+    .order-detail strong {
       color: #1a1a1a;
       font-weight: 600;
     }
 
-    .pickup-info {
-      background: #f9fbf9;
-      padding: 16px;
-      border-radius: 4px;
-      margin-top: 15px;
+    .order-location {
+      background: #f8f9fa;
       border-left: 3px solid #31a645;
+      padding: 14px;
+      margin-top: 16px;
+      border-radius: 2px;
     }
 
-    .pickup-info p {
-      color: #1a1a1a;
-      margin-bottom: 4px;
-      font-size: 0.95em;
-    }
-
-    .pickup-info .label {
+    .order-location .label {
       font-weight: 700;
       color: #31a645;
       text-transform: uppercase;
-      font-size: 0.85em;
+      font-size: 0.8em;
       letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .order-location p {
+      color: #1a1a1a;
+      font-size: 0.95em;
     }
 
     .empty-state {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       color: #999;
-      grid-column: 1 / -1;
     }
 
-    .empty-state .icon {
+    .empty-state-icon {
       font-size: 3em;
-      margin-bottom: 15px;
-      opacity: 0.5;
+      margin-bottom: 16px;
+      opacity: 0.4;
     }
 
-    .admin-section {
-      background: #f9fbf9;
-      border: 2px dashed #31a645;
+    /* Admin Panel */
+    .admin-panel {
+      background: linear-gradient(135deg, #fffbea 0%, #fff8e1 100%);
+      border: 2px dashed #ffc107;
       border-radius: 4px;
-      padding: 25px;
-      margin-bottom: 25px;
+      padding: 32px;
+      margin-bottom: 40px;
+      display: none;
     }
 
-    .admin-section h3 {
-      color: #31a645;
-      margin-bottom: 20px;
+    .admin-panel.visible {
+      display: block;
+    }
+
+    .admin-panel h3 {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 24px;
       text-transform: uppercase;
-      font-size: 0.95em;
       letter-spacing: 1px;
     }
 
-    .admin-buttons {
+    .admin-form-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
     }
 
-    .admin-btn {
-      background: #31a645;
-      color: white;
-      border: none;
-      padding: 10px 16px;
+    .admin-form-grid input {
+      padding: 10px 12px;
+      border: 1px solid #ffc107;
       border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s;
       font-size: 0.9em;
     }
 
-    .admin-btn:hover {
-      background: #2a8f38;
-      box-shadow: 0 2px 8px rgba(49, 166, 69, 0.2);
-    }
-
-    .admin-btn.delete {
-      background: #dc3545;
-    }
-
-    .admin-btn.delete:hover {
-      background: #c82333;
-    }
-
-    .business-card-section {
-      text-align: center;
-    }
-
-    .business-card {
-      background: linear-gradient(135deg, #31a645 0%, #2a8f38 100%);
-      color: white;
-      padding: 40px 30px;
-      border-radius: 4px;
-      margin: 30px 0;
-      box-shadow: 0 4px 16px rgba(49, 166, 69, 0.25);
-      font-size: 0.95em;
-      line-height: 1.9;
-      border: 1px solid #31a645;
-    }
-
-    .business-card h3 {
-      font-size: 1.8em;
-      margin-bottom: 15px;
-      color: white;
-    }
-
-    .business-card .url {
-      font-size: 1.3em;
-      font-weight: 700;
-      background: rgba(0, 0, 0, 0.15);
-      padding: 12px;
-      border-radius: 4px;
-      margin: 12px 0;
-      word-break: break-all;
-      letter-spacing: 0.2px;
-    }
-
-    .print-btn {
-      background: #31a645;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 25px;
-      transition: all 0.3s;
-      font-size: 1em;
-      letter-spacing: 0.3px;
-    }
-
-    .print-btn:hover {
-      background: #2a8f38;
-      box-shadow: 0 4px 16px rgba(49, 166, 69, 0.25);
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2em;
-      }
-
-      .section {
-        padding: 30px 20px;
-      }
-
-      .pricing-input-group {
-        grid-template-columns: 1fr;
-      }
-
-      .admin-buttons {
-        grid-template-columns: 1fr;
-      }
-
-      header {
-        padding: 35px 20px;
-      }
-    }
-
-    @media print {
-      body {
-        background: white;
-      }
-
-      .section:not(.business-card-section) {
-        display: none;
-      }
-
-      .admin-section {
-        display: none;
-      }
-    }
-
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -565,366 +568,481 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .modal.show {
-      display: flex;
+      background: rgba(0, 0, 0, 0.5);
       align-items: center;
       justify-content: center;
     }
 
+    .modal.show {
+      display: flex;
+    }
+
     .modal-content {
-      background-color: #ffffff;
-      padding: 40px;
+      background: #ffffff;
+      padding: 48px;
       border-radius: 4px;
       max-width: 500px;
       width: 90%;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       border-top: 3px solid #31a645;
+      position: relative;
     }
 
-    .modal-content h2 {
-      color: #31a645;
-      margin-bottom: 20px;
-      font-size: 1.6em;
-      font-weight: 700;
-    }
-
-    .modal-content p {
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .close-modal {
-      float: right;
-      font-size: 28px;
-      font-weight: 300;
-      color: #999;
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
       cursor: pointer;
+      color: #999;
       transition: color 0.3s;
     }
 
-    .close-modal:hover {
+    .modal-close:hover {
       color: #31a645;
+    }
+
+    .modal-content h2 {
+      font-size: 1.6em;
+      font-weight: 700;
+      color: #31a645;
+      margin-bottom: 16px;
+    }
+
+    .modal-content p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.95em;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 60px 40px;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    footer p {
+      color: #999;
+      margin-bottom: 8px;
+      font-size: 0.95em;
+    }
+
+    /* Login Modal */
+    .login-modal {
+      display: flex !important;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box {
+      background: white;
+      padding: 48px;
+      border-radius: 4px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border-top: 3px solid #31a645;
+    }
+
+    .login-box h2 {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #31a645;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      font-size: 0.95em;
+    }
+
+    .login-box input:focus {
+      outline: none;
+      border-color: #31a645;
+      box-shadow: 0 0 0 4px rgba(49, 166, 69, 0.08);
+    }
+
+    .login-box .btn {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 12px 0;
+      }
+
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .hero {
+        padding: 100px 20px 60px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .section-title {
+        font-size: 1.8em;
+      }
+
+      .form-container {
+        padding: 30px 20px;
+      }
+    }
+
+    @media print {
+      nav, footer, .admin-panel, .btn-secondary {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>3D PRINT SERVICES</h1>
-    <p class="tagline">Professional custom 3D printing solutions</p>
-  </header>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">3D MANUFACTURING</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#request">Request</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Professional 3D Printing Services</h1>
+    <p class="subtitle">High-precision custom manufacturing for your specifications</p>
+    <a href="#request" class="cta">Request a Quote</a>
+  </div>
+
+  <!-- Main Content -->
   <div class="container">
 
-    <!-- What I Can Print Section -->
-    <div class="section">
-      <h2>Services Offered</h2>
+    <!-- Services Section -->
+    <div class="section" id="services">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Comprehensive 3D printing solutions tailored to your needs</p>
       
-      <div class="capabilities-grid">
-        <div class="capability-card">
-          <span class="icon">🔩</span>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">🔩</span>
           <h3>Industrial Components</h3>
-          <p>Custom functional parts and mechanical components for prototyping and production</p>
+          <p>Precision-engineered functional parts designed for performance and durability. Perfect for prototyping and low-volume production runs.</p>
         </div>
-        <div class="capability-card">
-          <span class="icon">🖥️</span>
-          <h3>Desktop Accessories</h3>
-          <p>Professional organizers, stands, and workspace solutions</p>
+        <div class="service-card">
+          <span class="service-icon">🏭</span>
+          <h3>Rapid Prototyping</h3>
+          <p>Quick turnaround prototypes for design verification and product development. Iterate faster and validate concepts efficiently.</p>
         </div>
-        <div class="capability-card">
-          <span class="icon">🎯</span>
-          <h3>Custom Designs</h3>
-          <p>Bring your specifications to life with precision printing</p>
+        <div class="service-card">
+          <span class="service-icon">📐</span>
+          <h3>Custom Design</h3>
+          <p>Bring your specifications to life. From initial concept to finished product, we handle your complete manufacturing needs.</p>
         </div>
-        <div class="capability-card">
-          <span class="icon">🏭</span>
-          <h3>Prototyping</h3>
-          <p>Rapid prototyping for engineering and design verification</p>
+        <div class="service-card">
+          <span class="service-icon">📦</span>
+          <h3>Batch Production</h3>
+          <p>Multiple units with consistent quality and specifications. Scalable solutions for your growing production demands.</p>
         </div>
-        <div class="capability-card">
-          <span class="icon">📦</span>
-          <h3>Batch Orders</h3>
-          <p>Multiple units with consistent quality and specifications</p>
+        <div class="service-card">
+          <span class="service-icon">🎯</span>
+          <h3>Material Selection</h3>
+          <p>Expert guidance on material properties. Choose from PLA, PETG, TPU, and other advanced polymers for optimal results.</p>
         </div>
-        <div class="capability-card">
-          <span class="icon">⚙️</span>
-          <h3>Technical Support</h3>
-          <p>Design optimization and material selection guidance</p>
+        <div class="service-card">
+          <span class="service-icon">⚙️</span>
+          <h3>Technical Consultation</h3>
+          <p>Professional advice on design optimization, tolerance specifications, and manufacturing feasibility for your projects.</p>
         </div>
       </div>
+    </div>
 
-      <div class="timeline">
-        <h3>Production Timeline</h3>
-        <div class="timeline-item">
-          <span class="timeline-icon">⚡</span>
-          <div class="timeline-content">
+    <!-- Timeline Section -->
+    <div class="section" id="timeline">
+      <h2 class="section-title">Production Timeline</h2>
+      <p class="section-subtitle">We offer flexible scheduling to meet your project deadlines</p>
+      
+      <div class="timeline-container">
+        <h3>Standard Delivery Options</h3>
+        <div class="timeline-grid">
+          <div class="timeline-item">
             <h4>Express (Same Day)</h4>
-            <p>Small, simple prints completed within business hours. Less than 2 hours print time.</p>
+            <p>Small, straightforward prints completed within business hours. Ideal for urgent prototypes and simple geometries. Print time under 2 hours.</p>
           </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-icon">📅</span>
-          <div class="timeline-content">
+          <div class="timeline-item">
             <h4>Standard (1-2 Business Days)</h4>
-            <p>Medium complexity prints. 2-6 hours print time.</p>
+            <p>Medium complexity prints with standard preparation and quality assurance. Print time 2-6 hours including setup and finishing.</p>
           </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-icon">🔧</span>
-          <div class="timeline-content">
+          <div class="timeline-item">
             <h4>Custom (2-5 Business Days)</h4>
-            <p>Large or complex designs requiring optimization and preparation. 6+ hours print time.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-icon">💡</span>
-          <div class="timeline-content">
-            <h4>Consultation Available</h4>
-            <p>We can provide time estimates and design recommendations for your specific requirements.</p>
+            <p>Large or complex designs requiring extensive optimization. Comprehensive design review, material testing, and quality control included.</p>
           </div>
         </div>
       </div>
-
-      <p style="margin-top: 30px; color: #666; font-style: italic; font-size: 0.95em;">
-        <strong>Note:</strong> Submit your design or specifications for an accurate quote and timeline estimate.
-      </p>
     </div>
 
     <!-- Pricing Section -->
-    <div class="section">
-      <h2>Pricing</h2>
-      <p style="margin-bottom: 25px;">Our competitive rates for various print types:</p>
+    <div class="section" id="pricing">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-subtitle">Competitive rates for professional quality</p>
       
-      <div class="pricing-section">
-        <h3>Current Rates</h3>
-        <div id="pricingList">
-          <div style="text-align: center; color: #999; padding: 30px;">
-            <p>Pricing information available upon request</p>
+      <div class="pricing-container">
+        <h3>Current Service Rates</h3>
+        <div id="pricingList" class="pricing-list">
+          <div style="text-align: center; color: #999; padding: 40px; font-size: 0.98em;">
+            Custom quotes available upon request
           </div>
         </div>
+      </div>
+    </div>
 
-        <div id="adminPricingSection" class="add-pricing-form" style="display: none;">
-          <h4>Add Service Price</h4>
-          <div class="pricing-input-group" style="margin-top: 15px;">
+    <!-- Request Form Section -->
+    <div class="section" id="request">
+      <h2 class="section-title">Request a Quote</h2>
+      <p class="section-subtitle">Provide your project details for a detailed proposal</p>
+      
+      <div class="form-container">
+        <h3>Print Request Form</h3>
+        <form id="orderForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name <span class="required">*</span></label>
+              <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>Project Name</label>
+              <input type="text" id="projectName" placeholder="Project identifier">
+            </div>
+            <div class="form-group">
+              <label>Preferred Material</label>
+              <select id="material">
+                <option value="PLA">PLA - Cost-effective, standard application</option>
+                <option value="PETG">PETG - Enhanced durability and strength</option>
+                <option value="TPU">TPU - Flexible, elastomer properties</option>
+                <option value="Other">Consult on material selection</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Color/Finish Preference</label>
+              <input type="text" id="color" placeholder="e.g., Natural, Black, White">
+            </div>
+            <div class="form-group">
+              <label>Quantity Required</label>
+              <input type="number" id="quantity" min="1" value="1">
+            </div>
+            <div class="form-group full">
+              <label>Project Specifications & Design Files <span class="required">*</span></label>
+              <textarea id="description" placeholder="Detailed project description, CAD file links, design specifications, dimensions, tolerance requirements, and any special instructions." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn" style="width: 100%; padding: 16px;">Submit Request</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Orders Section -->
+    <div class="section">
+      <h2 class="section-title">Completed Orders</h2>
+      <p class="section-subtitle">Ready for pickup</p>
+      
+      <div class="orders-container">
+        <h3>Queue Status</h3>
+        <button class="btn btn-secondary btn-small" onclick="openLoginModal()">Admin Access</button>
+        
+        <div id="adminPanel" class="admin-panel">
+          <h3>📋 Admin Panel</h3>
+          <div class="admin-form-grid">
+            <input type="text" id="pickupName" placeholder="Customer Name">
+            <input type="text" id="pickupItem" placeholder="Project Description">
+            <input type="datetime-local" id="pickupDate">
+            <input type="text" id="pickupLocation" placeholder="Pickup Location">
+            <input type="number" id="pickupCost" placeholder="Amount Due" step="0.01" min="0">
+            <input type="text" id="pickupNotes" placeholder="Notes (optional)">
+            <button class="btn btn-small" onclick="addPickupOrder()" style="grid-column: 1 / -1;">Add Completed Order</button>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
             <input type="text" id="pricingName" placeholder="Service name">
             <input type="number" id="pricingCost" placeholder="Price" step="0.01" min="0">
-            <button class="admin-btn btn-small" onclick="addPricing()">Add</button>
+            <button class="btn btn-small" onclick="addPricing()" style="grid-column: 1 / -1;">Add Pricing</button>
+          </div>
+        </div>
+
+        <div id="pickupOrders" class="orders-grid">
+          <div class="empty-state">
+            <div class="empty-state-icon">📦</div>
+            <p>No completed orders at this time</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Submit Order Section -->
-    <div class="section">
-      <h2>Submit Print Request</h2>
-      <p style="margin-bottom: 30px; color: #666;">Complete the form below with your specifications. We'll contact you with a detailed quote and timeline.</p>
-      
-      <form id="orderForm">
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
-        </div>
+  </div>
 
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <p>3D Manufacturing Services</p>
+    <p>Professional precision printing | Quality assured | Competitive rates</p>
+    <p style="font-size: 0.85em; margin-top: 16px; color: #666;">
+      <a href="https://bobisbob1554.github.io/DJP-3-D" style="color: #31a645; text-decoration: none;">bobisbob1554.github.io/DJP-3-D</a>
+    </p>
+  </footer>
 
-        <div class="form-group">
-          <label for="material">Preferred Material</label>
-          <select id="material" name="material">
-            <option value="PLA">PLA - Standard strength, cost-effective</option>
-            <option value="PETG">PETG - Enhanced durability and flexibility</option>
-            <option value="TPU">TPU - High flexibility for rubber-like parts</option>
-            <option value="No preference">No preference - I'll advise the best option</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="color">Preferred Color/Finish</label>
-          <input type="text" id="color" name="color" placeholder="e.g., Natural, Black, White">
-        </div>
-
-        <div class="form-group">
-          <label for="description">Project Details & Specifications *</label>
-          <textarea id="description" name="description" placeholder="Describe your requirements, attach design file links (Thingiverse, Printables, CAD files), specify dimensions, and any special requirements." required></textarea>
-        </div>
-
-        <button type="submit" class="btn">Submit Request</button>
-      </form>
+  <!-- Login Modal -->
+  <div id="loginModal" class="login-modal" style="display: none;">
+    <div class="login-box">
+      <span style="position: absolute; top: 16px; right: 16px; cursor: pointer; font-size: 24px; color: #999;" onclick="closeLoginModal()">&times;</span>
+      <h2>Admin Access</h2>
+      <input type="password" id="adminPassword" placeholder="Enter admin password" />
+      <button class="btn" onclick="authenticateAdmin()">Sign In</button>
     </div>
-
-    <!-- Pickup Orders Section -->
-    <div class="section">
-      <h2>Completed Orders - Ready for Pickup</h2>
-      <p style="margin-bottom: 30px; color: #666;">Orders that are completed and available for pickup:</p>
-
-      <div id="adminSection" class="admin-section" style="display: none;">
-        <h3>📋 Admin Panel - Add Completed Order</h3>
-        <div style="margin-bottom: 20px;">
-          <div class="form-group">
-            <label for="pickupName">Customer Name</label>
-            <input type="text" id="pickupName" placeholder="Enter customer name">
-          </div>
-          <div class="form-group">
-            <label for="pickupItem">Project Description</label>
-            <input type="text" id="pickupItem" placeholder="e.g., Custom bracket assembly">
-          </div>
-          <div class="form-group">
-            <label for="pickupDate">Ready for Pickup (Date & Time)</label>
-            <input type="datetime-local" id="pickupDate">
-          </div>
-          <div class="form-group">
-            <label for="pickupLocation">Pickup Location</label>
-            <input type="text" id="pickupLocation" placeholder="e.g., Office 301, Building A">
-          </div>
-          <div class="form-group">
-            <label for="pickupCost">Amount Due</label>
-            <input type="number" id="pickupCost" placeholder="Invoice total" step="0.01" min="0">
-          </div>
-          <div class="form-group">
-            <label for="pickupNotes">Additional Notes</label>
-            <input type="text" id="pickupNotes" placeholder="Quality notes, special instructions, etc.">
-          </div>
-          <button type="button" class="btn" onclick="addPickupOrder()">Add to Pickup Queue</button>
-        </div>
-      </div>
-
-      <button type="button" class="btn btn-secondary" style="margin-bottom: 25px; width: auto; display: inline-block;" onclick="toggleAdminPanel()">Admin Panel</button>
-
-      <div id="pickupOrders" class="orders-grid">
-        <div class="empty-state">
-          <div class="icon">📦</div>
-          <p>No completed orders at this time.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Business Card Section -->
-    <div class="section business-card-section">
-      <h2>Business Card</h2>
-      <p style="margin-bottom: 30px; color: #666;">Share your 3D print services:</p>
-      
-      <div class="business-card">
-        <h3>3D PRINT SERVICES</h3>
-        <p style="font-size: 1em; margin-bottom: 15px;">Professional custom 3D printing</p>
-        <div class="url">
-          bobisbob1554.github.io/DJP-3-D
-        </div>
-        <p style="font-size: 0.95em; margin-top: 15px;">Quality printing | Competitive rates | Fast turnaround</p>
-      </div>
-
-      <button class="print-btn" onclick="window.print()">Print Business Card</button>
-    </div>
-
   </div>
 
   <!-- Success Modal -->
   <div id="successModal" class="modal">
     <div class="modal-content">
-      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <span class="modal-close" onclick="closeModal()">&times;</span>
       <h2>Request Submitted</h2>
-      <p>Thank you for submitting your print request. We will review your specifications and contact you within 24 business hours with a detailed quote and timeline. Please check your email for updates.</p>
-      <button class="btn" onclick="closeModal()" style="margin-top: 25px;">Close</button>
+      <p>Thank you for submitting your print request. Our team will review your specifications and contact you within 24 business hours with a detailed quote, material recommendations, and production timeline. We look forward to working with you.</p>
+      <button class="btn" onclick="closeModal()" style="width: 100%; margin-top: 24px;">Close</button>
     </div>
   </div>
 
   <script>
-    // Load pricing from localStorage
+    const ADMIN_PASSWORD = 'admin123'; // Change this to your secure password
+    let isAdmin = false;
+
+    // Login Functions
+    function openLoginModal() {
+      if (isAdmin) {
+        document.getElementById('adminPanel').classList.add('visible');
+      } else {
+        document.getElementById('loginModal').style.display = 'flex';
+      }
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('adminPassword').value = '';
+    }
+
+    function authenticateAdmin() {
+      const password = document.getElementById('adminPassword').value;
+      if (password === ADMIN_PASSWORD) {
+        isAdmin = true;
+        closeLoginModal();
+        document.getElementById('adminPanel').classList.add('visible');
+      } else {
+        alert('Incorrect password');
+      }
+    }
+
+    // Pricing Functions
     function loadPricing() {
       const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
       const container = document.getElementById('pricingList');
       
       if (pricing.length === 0) {
-        container.innerHTML = `
-          <div style="text-align: center; color: #999; padding: 30px;">
-            <p>Pricing information available upon request</p>
-          </div>
-        `;
+        container.innerHTML = `<div style="text-align: center; color: #999; padding: 40px; font-size: 0.98em;">Custom quotes available upon request</div>`;
         return;
       }
 
       container.innerHTML = pricing.map((item, index) => `
         <div class="pricing-item">
           <span class="pricing-item-name">${item.name}</span>
-          <div style="display: flex; align-items: center; gap: 15px;">
+          <div style="display: flex; gap: 16px; align-items: center;">
             <span class="pricing-item-price">$${parseFloat(item.cost).toFixed(2)}</span>
-            <button class="admin-btn delete btn-small" onclick="deletePricing(${index})">Remove</button>
+            ${isAdmin ? `<button class="btn btn-delete btn-small" onclick="deletePricing(${index})">Remove</button>` : ''}
           </div>
         </div>
       `).join('');
     }
 
-    // Add pricing
     function addPricing() {
+      if (!isAdmin) return;
       const name = document.getElementById('pricingName').value.trim();
       const cost = document.getElementById('pricingCost').value.trim();
-
       if (!name || !cost) {
-        alert('Please enter both service name and price');
+        alert('Enter both name and price');
         return;
       }
-
       const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
       pricing.push({ name, cost });
       localStorage.setItem('pricing', JSON.stringify(pricing));
-
       document.getElementById('pricingName').value = '';
       document.getElementById('pricingCost').value = '';
-
       loadPricing();
-      alert('Price added successfully');
     }
 
-    // Delete pricing
     function deletePricing(index) {
-      if (confirm('Remove this pricing?')) {
-        const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
-        pricing.splice(index, 1);
-        localStorage.setItem('pricing', JSON.stringify(pricing));
-        loadPricing();
-      }
+      if (!isAdmin) return;
+      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+      pricing.splice(index, 1);
+      localStorage.setItem('pricing', JSON.stringify(pricing));
+      loadPricing();
     }
 
-    // Load pickup orders from localStorage
+    // Pickup Functions
     function loadPickupOrders() {
       const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
       const container = document.getElementById('pickupOrders');
       
       if (orders.length === 0) {
-        container.innerHTML = `
-          <div class="empty-state">
-            <div class="icon">📦</div>
-            <p>No completed orders at this time.</p>
-          </div>
-        `;
+        container.innerHTML = `<div class="empty-state" style="grid-column: 1 / -1;"><div class="empty-state-icon">📦</div><p>No completed orders at this time</p></div>`;
         return;
       }
 
       container.innerHTML = orders.map((order, index) => `
-        <div class="order-card ready">
-          <div class="order-status ready">✓ READY FOR PICKUP</div>
-          <h3>${order.name}</h3>
-          <div class="order-details">
-            <p><strong>Project:</strong> ${order.item}</p>
-            <p><strong>Ready:</strong> ${new Date(order.readyDate).toLocaleDateString()} at ${new Date(order.readyDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
-            ${order.cost ? `<p><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</p>` : ''}
-          </div>
-          <div class="pickup-info">
-            <p class="label">📍 Location</p>
+        <div class="order-card">
+          <div class="order-status">✓ READY FOR PICKUP</div>
+          <h4>${order.name}</h4>
+          <div class="order-detail"><strong>Project:</strong> ${order.item}</div>
+          <div class="order-detail"><strong>Ready:</strong> ${new Date(order.readyDate).toLocaleDateString()} at ${new Date(order.readyDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+          ${order.cost ? `<div class="order-detail"><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</div>` : ''}
+          <div class="order-location">
+            <span class="label">📍 Pickup Location</span>
             <p>${order.location}</p>
-            ${order.notes ? `<p style="margin-top: 10px; color: #666; font-size: 0.9em; font-style: italic;">${order.notes}</p>` : ''}
+            ${order.notes ? `<p style="margin-top: 8px; font-size: 0.9em; color: #666; font-style: italic;">${order.notes}</p>` : ''}
           </div>
-          <button class="admin-btn delete" onclick="deleteOrder(${index})" style="width: 100%; margin-top: 15px;">Delete</button>
+          ${isAdmin ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${index})" style="width: 100%; margin-top: 16px;">Delete</button>` : ''}
         </div>
       `).join('');
     }
 
-    // Add pickup order
     function addPickupOrder() {
+      if (!isAdmin) return;
       const name = document.getElementById('pickupName').value.trim();
       const item = document.getElementById('pickupItem').value.trim();
       const readyDate = document.getElementById('pickupDate').value;
@@ -933,7 +1051,7 @@
       const notes = document.getElementById('pickupNotes').value.trim();
 
       if (!name || !item || !readyDate || !location) {
-        alert('Please fill in all required fields');
+        alert('Fill in all required fields');
         return;
       }
 
@@ -949,36 +1067,27 @@
       document.getElementById('pickupNotes').value = '';
 
       loadPickupOrders();
-      alert('Order added to pickup queue');
     }
 
-    // Delete pickup order
     function deleteOrder(index) {
-      if (confirm('Remove this order from the queue?')) {
-        const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-        orders.splice(index, 1);
-        localStorage.setItem('pickupOrders', JSON.stringify(orders));
-        loadPickupOrders();
-      }
+      if (!isAdmin) return;
+      const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
+      orders.splice(index, 1);
+      localStorage.setItem('pickupOrders', JSON.stringify(orders));
+      loadPickupOrders();
     }
 
-    // Toggle admin panel
-    function toggleAdminPanel() {
-      const panel = document.getElementById('adminSection');
-      const pricingPanel = document.getElementById('adminPricingSection');
-      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-      pricingPanel.style.display = pricingPanel.style.display === 'none' ? 'block' : 'none';
-    }
-
-    // Handle form submission
+    // Form Submission
     document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        projectName: document.getElementById('projectName').value,
         material: document.getElementById('material').value,
         color: document.getElementById('color').value,
+        quantity: document.getElementById('quantity').value,
         description: document.getElementById('description').value
       };
 
@@ -990,12 +1099,11 @@
       document.getElementById('successModal').classList.add('show');
     });
 
-    // Close modal
     function closeModal() {
       document.getElementById('successModal').classList.remove('show');
     }
 
-    // Load data on page load
+    // Initialize
     loadPricing();
     loadPickupOrders();
   </script>
