@@ -13,29 +13,34 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       min-height: 100vh;
       padding: 20px;
+      color: #f0f0f0;
     }
 
     header {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 30px 20px;
-      border-radius: 12px;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      padding: 40px 20px;
+      border-radius: 8px;
       text-align: center;
       margin-bottom: 40px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+      border: 2px solid #ff8c42;
     }
 
     h1 {
-      color: #667eea;
+      color: #fff;
       font-size: 2.5em;
       margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      font-weight: 700;
     }
 
     .tagline {
-      color: #666;
+      color: #fff;
       font-size: 1.1em;
+      opacity: 0.95;
     }
 
     .container {
@@ -44,17 +49,18 @@
     }
 
     .section {
-      background: white;
+      background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
       padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
       margin-bottom: 30px;
+      border: 1px solid #ff6b35;
     }
 
     .section h2 {
-      color: #333;
+      color: #ff6b35;
       margin-bottom: 30px;
-      border-bottom: 3px solid #667eea;
+      border-bottom: 3px solid #ff6b35;
       padding-bottom: 15px;
       font-size: 2em;
     }
@@ -68,11 +74,18 @@
     }
 
     .capability-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
       padding: 20px;
       border-radius: 8px;
       text-align: center;
+      border: 2px solid #ff8c42;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .capability-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
     }
 
     .capability-card .icon {
@@ -83,6 +96,7 @@
     .capability-card h3 {
       font-size: 1.2em;
       margin-bottom: 10px;
+      font-weight: 600;
     }
 
     .capability-card p {
@@ -91,14 +105,15 @@
     }
 
     .timeline {
-      background: #f8f9fa;
+      background: #1a1a1a;
       padding: 20px;
       border-radius: 8px;
       margin-top: 20px;
+      border-left: 4px solid #ff6b35;
     }
 
     .timeline h3 {
-      color: #333;
+      color: #ff6b35;
       margin-bottom: 15px;
     }
 
@@ -107,7 +122,7 @@
       gap: 15px;
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #444;
     }
 
     .timeline-item:last-child {
@@ -123,12 +138,12 @@
     }
 
     .timeline-content h4 {
-      color: #667eea;
+      color: #ff6b35;
       margin-bottom: 5px;
     }
 
     .timeline-content p {
-      color: #666;
+      color: #aaa;
       font-size: 0.95em;
     }
 
@@ -140,7 +155,7 @@
     .form-group label {
       display: block;
       margin-bottom: 8px;
-      color: #333;
+      color: #ff6b35;
       font-weight: 600;
     }
 
@@ -149,18 +164,21 @@
     .form-group textarea {
       width: 100%;
       padding: 12px;
-      border: 2px solid #e0e0e0;
+      border: 2px solid #ff6b35;
       border-radius: 6px;
       font-size: 1em;
       font-family: inherit;
       transition: border-color 0.3s;
+      background: #1a1a1a;
+      color: #f0f0f0;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #667eea;
+      border-color: #ff8c42;
+      box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
     }
 
     .form-group textarea {
@@ -169,21 +187,22 @@
     }
 
     .btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
-      border: none;
+      border: 2px solid #ff6b35;
       padding: 15px 30px;
       border-radius: 6px;
       cursor: pointer;
       font-size: 1.1em;
       font-weight: bold;
-      transition: opacity 0.3s, transform 0.2s;
+      transition: opacity 0.3s, transform 0.2s, box-shadow 0.3s;
       width: 100%;
     }
 
     .btn:hover {
       opacity: 0.9;
       transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
     }
 
     .btn:active {
@@ -198,8 +217,8 @@
     }
 
     .order-card {
-      background: linear-gradient(135deg, #f5f7fa 0%, #f0f0f5 100%);
-      border: 2px solid #667eea;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+      border: 2px solid #ff6b35;
       border-radius: 8px;
       padding: 20px;
       position: relative;
@@ -207,8 +226,8 @@
     }
 
     .order-card.ready {
-      border-color: #28a745;
-      background: linear-gradient(135deg, #f0fdf4 0%, #f0fdf4 100%);
+      border-color: #4CAF50;
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
     }
 
     .order-card.ready::before {
@@ -217,7 +236,7 @@
       top: -10px;
       right: -10px;
       font-size: 4em;
-      color: #28a745;
+      color: #4CAF50;
       opacity: 0.2;
     }
 
@@ -231,23 +250,23 @@
     }
 
     .order-status.ready {
-      background: #28a745;
+      background: #4CAF50;
       color: white;
     }
 
     .order-status.printing {
-      background: #ffc107;
-      color: #333;
+      background: #ff6b35;
+      color: white;
     }
 
     .order-card h3 {
-      color: #333;
+      color: #ff6b35;
       margin-bottom: 10px;
       font-size: 1.3em;
     }
 
     .order-details {
-      color: #555;
+      color: #aaa;
       font-size: 0.95em;
       line-height: 1.6;
       margin-bottom: 15px;
@@ -258,31 +277,31 @@
     }
 
     .order-details strong {
-      color: #667eea;
+      color: #ff6b35;
     }
 
     .pickup-info {
-      background: white;
+      background: #1a1a1a;
       padding: 15px;
       border-radius: 6px;
       margin-top: 15px;
-      border-left: 4px solid #667eea;
+      border-left: 4px solid #ff6b35;
     }
 
     .pickup-info p {
-      color: #333;
+      color: #f0f0f0;
       margin-bottom: 5px;
     }
 
     .pickup-info .label {
       font-weight: bold;
-      color: #667eea;
+      color: #ff6b35;
     }
 
     .empty-state {
       text-align: center;
       padding: 40px 20px;
-      color: #999;
+      color: #666;
     }
 
     .empty-state .icon {
@@ -291,15 +310,15 @@
     }
 
     .admin-section {
-      background: #fff3cd;
-      border: 2px dashed #ffc107;
+      background: #1a1a1a;
+      border: 2px dashed #ff6b35;
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 20px;
     }
 
     .admin-section h3 {
-      color: #333;
+      color: #ff6b35;
       margin-bottom: 15px;
     }
 
@@ -310,27 +329,30 @@
     }
 
     .admin-btn {
-      background: #ffc107;
-      color: #333;
-      border: none;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      color: white;
+      border: 2px solid #ff6b35;
       padding: 10px 15px;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .admin-btn:hover {
-      background: #ffb300;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
     }
 
     .admin-btn.delete {
       background: #dc3545;
+      border-color: #dc3545;
       color: white;
     }
 
     .admin-btn.delete:hover {
       background: #c82333;
+      border-color: #c82333;
     }
 
     .business-card-section {
@@ -338,14 +360,15 @@
     }
 
     .business-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
       color: white;
       padding: 30px;
       border-radius: 8px;
       margin: 20px 0;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
       font-size: 0.9em;
       line-height: 1.8;
+      border: 2px solid #ff8c42;
     }
 
     .business-card h3 {
@@ -356,7 +379,7 @@
     .business-card .url {
       font-size: 1.2em;
       font-weight: bold;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.2);
       padding: 10px;
       border-radius: 6px;
       margin: 10px 0;
@@ -364,9 +387,9 @@
     }
 
     .print-btn {
-      background: white;
-      color: #667eea;
-      border: none;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      color: white;
+      border: 2px solid #ff8c42;
       padding: 12px 25px;
       border-radius: 6px;
       cursor: pointer;
@@ -415,7 +438,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
       border-radius: 0;
     }
 
@@ -426,17 +449,22 @@
     }
 
     .modal-content {
-      background-color: white;
+      background-color: #1f1f1f;
       padding: 30px;
       border-radius: 12px;
       max-width: 500px;
       width: 90%;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
+      border: 2px solid #ff6b35;
     }
 
     .modal-content h2 {
-      color: #333;
+      color: #ff6b35;
       margin-bottom: 20px;
+    }
+
+    .modal-content p {
+      color: #aaa;
     }
 
     .close-modal {
@@ -448,16 +476,16 @@
     }
 
     .close-modal:hover {
-      color: #333;
+      color: #ff6b35;
     }
 
     .success-message {
-      background: #d4edda;
-      color: #155724;
+      background: #1a3a1a;
+      color: #4CAF50;
       padding: 15px;
       border-radius: 6px;
       margin-bottom: 20px;
-      border: 1px solid #c3e6cb;
+      border: 1px solid #4CAF50;
     }
   </style>
 </head>
@@ -539,7 +567,7 @@
         </div>
       </div>
 
-      <p style="margin-top: 20px; color: #666; font-style: italic;">
+      <p style="margin-top: 20px; color: #aaa; font-style: italic;">
         💡 <strong>Tip:</strong> Smaller items print faster. Bring a design or description, and I can give you a time estimate!
       </p>
     </div>
@@ -547,7 +575,7 @@
     <!-- Submit Order Section -->
     <div class="section">
       <h2>📝 Request a Print</h2>
-      <p style="color: #666; margin-bottom: 20px;">Tell me what you'd like to get 3D printed, and I'll give you a time estimate!</p>
+      <p style="color: #aaa; margin-bottom: 20px;">Tell me what you'd like to get 3D printed, and I'll give you a time estimate!</p>
       
       <form id="orderForm">
         <div class="form-group">
@@ -587,7 +615,7 @@
     <!-- Pickup Orders Section -->
     <div class="section">
       <h2>📦 Ready for Pickup</h2>
-      <p style="color: #666; margin-bottom: 20px;">Your prints are ready! Here's when and where to pick them up:</p>
+      <p style="color: #aaa; margin-bottom: 20px;">Your prints are ready! Here's when and where to pick them up:</p>
 
       <div id="adminSection" class="admin-section" style="display: none;">
         <h3>🔧 Admin - Add Ready Pickup</h3>
@@ -612,11 +640,11 @@
             <label for="pickupNotes">Notes (optional)</label>
             <input type="text" id="pickupNotes" placeholder="Any special instructions">
           </div>
-          <button type="button" class="btn" style="background: #28a745;" onclick="addPickupOrder()">Add Pickup Order</button>
+          <button type="button" class="btn" style="background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%); border-color: #4CAF50;" onclick="addPickupOrder()">Add Pickup Order</button>
         </div>
       </div>
 
-      <button type="button" class="btn" style="background: #6c757d; margin-bottom: 20px;" onclick="toggleAdminPanel()">Toggle Admin Panel</button>
+      <button type="button" class="btn" style="background: #444; border-color: #666; margin-bottom: 20px;" onclick="toggleAdminPanel()">Toggle Admin Panel</button>
 
       <div id="pickupOrders" class="orders-grid">
         <div class="empty-state">
@@ -629,7 +657,7 @@
     <!-- Business Card Section -->
     <div class="section business-card-section">
       <h2>📇 Share This Link</h2>
-      <p style="color: #666; margin-bottom: 20px;">Print out the business card below and hand it out to friends!</p>
+      <p style="color: #aaa; margin-bottom: 20px;">Print out the business card below and hand it out to friends!</p>
       
       <div class="business-card">
         <h3>🖨️ 3D Prints</h3>
@@ -650,7 +678,7 @@
     <div class="modal-content">
       <span class="close-modal" onclick="closeModal()">&times;</span>
       <h2>✅ Order Submitted!</h2>
-      <p style="color: #666; margin-bottom: 20px;">Thanks for submitting your print request! I'll review it and let you know when I have a time estimate for you. Check back soon for pickup information!</p>
+      <p style="color: #aaa; margin-bottom: 20px;">Thanks for submitting your print request! I'll review it and let you know when I have a time estimate for you. Check back soon for pickup information!</p>
       <button class="btn" onclick="closeModal()" style="width: 100%;">Close</button>
     </div>
   </div>
@@ -682,7 +710,7 @@
           <div class="pickup-info">
             <p class="label">📍 Pickup Location:</p>
             <p>${order.location}</p>
-            ${order.notes ? `<p style="margin-top: 10px; color: #666; font-size: 0.9em;"><strong>Notes:</strong> ${order.notes}</p>` : ''}
+            ${order.notes ? `<p style="margin-top: 10px; color: #aaa; font-size: 0.9em;"><strong>Notes:</strong> ${order.notes}</p>` : ''}
           </div>
           <button class="admin-btn delete" onclick="deleteOrder(${index})" style="width: 100%; margin-top: 15px;">Delete</button>
         </div>
