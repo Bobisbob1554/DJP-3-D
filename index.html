@@ -758,6 +758,13 @@
       width: 100%;
     }
 
+    .error-message {
+      color: #dc3545;
+      font-size: 0.9em;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
     @media (max-width: 768px) {
       nav {
         padding: 12px 0;
@@ -950,7 +957,7 @@
             </div>
             <div class="form-group full">
               <label>Additional Notes or Concerns</label>
-              <textarea id="additionalNotes" placeholder="Let us know if you have concerns about color availability, print duration, or any other considerations. We'll let you know if we can accommodate your request."></textarea>
+              <textarea id="additionalNotes" placeholder="Let us know if you have concerns about color availability, print duration, or any other considerations. We'll let you know if we can accommodate."></textarea>
             </div>
           </div>
           <button type="submit" class="btn" style="width: 100%; padding: 16px;">Submit Request</button>
@@ -998,17 +1005,17 @@
           <div>
             <h4 style="font-size: 1em; font-weight: 700; margin-bottom: 12px;">Add Pricing</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <input type="text" id="pricingName" placeholder="Service name">
-              <input type="number" id="pricingCost" placeholder="Price" step="0.01" min="0">
+              <input type="text" id="pricingName" placeholder="Service Name">
+              <input type="number" id="pricingAmount" placeholder="Price" step="0.01" min="0">
               <button class="btn btn-small" onclick="addPricing()" style="grid-column: 1 / -1;">Add Pricing</button>
             </div>
           </div>
         </div>
 
-        <div id="pickupOrders" class="orders-grid">
+        <div id="ordersGrid" class="orders-grid">
           <div class="empty-state">
-            <div class="empty-state-icon">📦</div>
-            <p>No completed orders at this time</p>
+            <div class="empty-state-icon">📭</div>
+            <p>No orders yet</p>
           </div>
         </div>
       </div>
@@ -1018,245 +1025,229 @@
 
   <!-- Footer -->
   <footer>
-    <p>3D Manufacturing Services</p>
-    <p>Professional precision printing | Quality assured | Competitive rates</p>
-    <p style="font-size: 0.85em; margin-top: 16px; color: #666;">
-      <a href="https://bobisbob1554.github.io/DJP-3-D" style="color: #31a645; text-decoration: none;">bobisbob1554.github.io/DJP-3-D</a>
-    </p>
+    <p>&copy; 2024 3D Manufacturing Services. All rights reserved.</p>
+    <p>Professional 3D Printing Solutions</p>
   </footer>
 
   <!-- Login Modal -->
-  <div id="loginModal" class="login-modal" style="display: none;">
+  <div id="loginModal" class="login-modal">
     <div class="login-box">
-      <span style="position: absolute; top: 16px; right: 16px; cursor: pointer; font-size: 24px; color: #999;" onclick="closeLoginModal()">&times;</span>
-      <h2>Admin Access</h2>
-      <input type="password" id="adminPassword" placeholder="Enter admin password" />
-      <button class="btn" onclick="authenticateAdmin()">Sign In</button>
-    </div>
-  </div>
-
-  <!-- Success Modal -->
-  <div id="successModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <h2>Request Submitted</h2>
-      <p>Thank you for submitting your print request. Our team will review your specifications and contact you within 24 business hours with a detailed quote, material recommendations, and production timeline.</p>
-      <button class="btn" onclick="closeModal()" style="width: 100%; margin-top: 24px;">Close</button>
+      <span class="modal-close" onclick="closeLoginModal()">&times;</span>
+      <h2>Admin Login</h2>
+      <div id="errorMessage" class="error-message" style="display: none;"></div>
+      <input type="password" id="adminPassword" placeholder="Enter admin password" onkeypress="handlePasswordKeypress(event)">
+      <button class="btn" onclick="verifyPassword()" style="width: 100%;">Login</button>
     </div>
   </div>
 
   <script>
-    const ADMIN_PASSWORD = 'admin123'; // Change this to your secure password
-    let isAdmin = false;
+    // Admin Password Configuration
+    const ADMIN_PASSWORD = '4747';
+    let isAdminAuthenticated = false;
 
-    // Login Functions
+    // Open Login Modal
     function openLoginModal() {
-      if (isAdmin) {
-        document.getElementById('adminPanel').classList.add('visible');
-      } else {
-        document.getElementById('loginModal').style.display = 'flex';
-      }
-    }
-
-    function closeLoginModal() {
-      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('loginModal').classList.add('login-modal');
       document.getElementById('adminPassword').value = '';
+      document.getElementById('errorMessage').style.display = 'none';
+      document.getElementById('adminPassword').focus();
     }
 
-    function authenticateAdmin() {
-      const password = document.getElementById('adminPassword').value;
-      if (password === ADMIN_PASSWORD) {
-        isAdmin = true;
-        closeLoginModal();
+    // Close Login Modal
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.remove('login-modal');
+      document.getElementById('adminPassword').value = '';
+      document.getElementById('errorMessage').style.display = 'none';
+      isAdminAuthenticated = false;
+    }
+
+    // Handle Enter Key in Password Field
+    function handlePasswordKeypress(event) {
+      if (event.key === 'Enter') {
+        verifyPassword();
+      }
+    }
+
+    // Verify Admin Password
+    function verifyPassword() {
+      const passwordInput = document.getElementById('adminPassword').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (passwordInput === ADMIN_PASSWORD) {
+        isAdminAuthenticated = true;
         document.getElementById('adminPanel').classList.add('visible');
+        closeLoginModal();
+        loadOrders();
       } else {
-        alert('Incorrect password');
+        errorMessage.textContent = 'Incorrect password. Please try again.';
+        errorMessage.style.display = 'block';
+        document.getElementById('adminPassword').value = '';
+        document.getElementById('adminPassword').focus();
       }
     }
 
-    // Message Functions
-    function loadMessages() {
-      const messages = JSON.parse(localStorage.getItem('messages')) || [];
-      const container = document.getElementById('messagesContainer');
-      
-      if (messages.length === 0) {
-        container.innerHTML = `<div style="text-align: center; color: #999; padding: 20px; font-size: 0.9em;">No customer messages yet</div>`;
-        return;
-      }
-
-      container.innerHTML = messages.map((msg, index) => `
-        <div class="message-item">
-          <div class="message-item-name">${msg.name}</div>
-          <div class="message-item-email">${msg.email}</div>
-          <div class="message-item-text"><strong>Message:</strong> ${msg.message}</div>
-          ${msg.reply ? `<div class="message-item-text" style="background: #f0f0f0; padding: 8px; border-radius: 4px; color: #31a645;"><strong>Your Reply:</strong> ${msg.reply}</div>` : ''}
-          ${isAdmin && !msg.reply ? `
-            <div class="reply-form">
-              <textarea id="reply-${index}" placeholder="Type your response here..." style="grid-column: 1 / -1;"></textarea>
-              <button class="btn btn-small" onclick="sendReply(${index})" style="grid-column: 1 / -1;">Send Reply</button>
-            </div>
-          ` : ''}
-        </div>
-      `).join('');
-    }
-
-    function sendReply(index) {
-      const replyText = document.getElementById(`reply-${index}`).value.trim();
-      if (!replyText) {
-        alert('Please type a response');
-        return;
-      }
-
-      const messages = JSON.parse(localStorage.getItem('messages')) || [];
-      if (messages[index]) {
-        messages[index].reply = replyText;
-        localStorage.setItem('messages', JSON.stringify(messages));
-        loadMessages();
-        alert('Reply sent to customer!');
-      }
-    }
-
-    function addMessage(name, email, message) {
-      const messages = JSON.parse(localStorage.getItem('messages')) || [];
-      messages.push({ name, email, message, reply: null, timestamp: new Date().toLocaleString() });
-      localStorage.setItem('messages', JSON.stringify(messages));
-      loadMessages();
-    }
-
-    // Pricing Functions
-    function loadPricing() {
-      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
-      const container = document.getElementById('pricingList');
-      
-      if (pricing.length === 0) {
-        container.innerHTML = `<div style="text-align: center; color: #999; padding: 40px; font-size: 0.98em;">Custom quotes available upon request</div>`;
-        return;
-      }
-
-      container.innerHTML = pricing.map((item, index) => `
-        <div class="pricing-item">
-          <span class="pricing-item-name">${item.name}</span>
-          <div style="display: flex; gap: 16px; align-items: center;">
-            <span class="pricing-item-price">$${parseFloat(item.cost).toFixed(2)}</span>
-            ${isAdmin ? `<button class="btn btn-delete btn-small" onclick="deletePricing(${index})">Remove</button>` : ''}
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function addPricing() {
-      if (!isAdmin) return;
-      const name = document.getElementById('pricingName').value.trim();
-      const cost = document.getElementById('pricingCost').value.trim();
-      if (!name || !cost) {
-        alert('Enter both name and price');
-        return;
-      }
-      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
-      pricing.push({ name, cost });
-      localStorage.setItem('pricing', JSON.stringify(pricing));
-      document.getElementById('pricingName').value = '';
-      document.getElementById('pricingCost').value = '';
-      loadPricing();
-    }
-
-    function deletePricing(index) {
-      if (!isAdmin) return;
-      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
-      pricing.splice(index, 1);
-      localStorage.setItem('pricing', JSON.stringify(pricing));
-      loadPricing();
-    }
-
-    // Order Functions
+    // Add Pickup Order
     function addPickupOrder() {
-      if (!isAdmin) return;
-      const name = document.getElementById('pickupName').value.trim();
-      const item = document.getElementById('pickupItem').value.trim();
+      if (!isAdminAuthenticated) {
+        alert('Please login first');
+        return;
+      }
+
+      const name = document.getElementById('pickupName').value;
+      const item = document.getElementById('pickupItem').value;
       const date = document.getElementById('pickupDate').value;
-      const location = document.getElementById('pickupLocation').value.trim();
-      const cost = document.getElementById('pickupCost').value.trim();
-      const notes = document.getElementById('pickupNotes').value.trim();
+      const location = document.getElementById('pickupLocation').value;
+      const cost = document.getElementById('pickupCost').value;
+      const notes = document.getElementById('pickupNotes').value;
 
       if (!name || !item || !date || !location || !cost) {
         alert('Please fill in all required fields');
         return;
       }
 
-      const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-      orders.push({ name, item, date, location, cost, notes });
-      localStorage.setItem('pickupOrders', JSON.stringify(orders));
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.push({
+        id: Date.now(),
+        name,
+        item,
+        date,
+        location,
+        cost,
+        notes
+      });
 
+      localStorage.setItem('orders', JSON.stringify(orders));
+      clearOrderForm();
+      loadOrders();
+    }
+
+    // Add Pricing
+    function addPricing() {
+      if (!isAdminAuthenticated) {
+        alert('Please login first');
+        return;
+      }
+
+      const name = document.getElementById('pricingName').value;
+      const amount = document.getElementById('pricingAmount').value;
+
+      if (!name || !amount) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+      pricing.push({
+        id: Date.now(),
+        name,
+        amount
+      });
+
+      localStorage.setItem('pricing', JSON.stringify(pricing));
+      document.getElementById('pricingName').value = '';
+      document.getElementById('pricingAmount').value = '';
+      loadPricing();
+    }
+
+    // Load Orders
+    function loadOrders() {
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      const ordersGrid = document.getElementById('ordersGrid');
+
+      if (orders.length === 0) {
+        ordersGrid.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><p>No orders yet</p></div>';
+        return;
+      }
+
+      ordersGrid.innerHTML = orders.map(order => `
+        <div class="order-card">
+          <span class="order-status">Ready for Pickup</span>
+          <h4>${order.name}</h4>
+          <div class="order-detail"><strong>Project:</strong> ${order.item}</div>
+          <div class="order-detail"><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</div>
+          <div class="order-detail"><strong>Pickup Date:</strong> ${new Date(order.date).toLocaleString()}</div>
+          <div class="order-location">
+            <span class="label">Pickup Location</span>
+            <p>${order.location}</p>
+          </div>
+          ${order.notes ? `<div class="order-detail"><strong>Notes:</strong> ${order.notes}</div>` : ''}
+          ${isAdminAuthenticated ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${order.id})" style="margin-top: 12px; width: 100%;">Delete</button>` : ''}
+        </div>
+      `).join('');
+    }
+
+    // Delete Order
+    function deleteOrder(id) {
+      if (!isAdminAuthenticated) {
+        alert('Please login first');
+        return;
+      }
+
+      if (confirm('Are you sure you want to delete this order?')) {
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+        orders = orders.filter(order => order.id !== id);
+        localStorage.setItem('orders', JSON.stringify(orders));
+        loadOrders();
+      }
+    }
+
+    // Load Pricing
+    function loadPricing() {
+      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+      const pricingList = document.getElementById('pricingList');
+
+      if (pricing.length === 0) {
+        pricingList.innerHTML = '<div style="text-align: center; color: #999; padding: 40px; font-size: 0.98em;">Custom quotes available upon request</div>';
+        return;
+      }
+
+      pricingList.innerHTML = pricing.map(item => `
+        <div class="pricing-item">
+          <span class="pricing-item-name">${item.name}</span>
+          <span class="pricing-item-price">$${parseFloat(item.amount).toFixed(2)}</span>
+          ${isAdminAuthenticated ? `<button class="btn btn-delete btn-small" onclick="deletePricing(${item.id})" style="margin-left: 8px;">Delete</button>` : ''}
+        </div>
+      `).join('');
+    }
+
+    // Delete Pricing
+    function deletePricing(id) {
+      if (!isAdminAuthenticated) {
+        alert('Please login first');
+        return;
+      }
+
+      if (confirm('Are you sure you want to delete this pricing?')) {
+        let pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+        pricing = pricing.filter(item => item.id !== id);
+        localStorage.setItem('pricing', JSON.stringify(pricing));
+        loadPricing();
+      }
+    }
+
+    // Clear Order Form
+    function clearOrderForm() {
       document.getElementById('pickupName').value = '';
       document.getElementById('pickupItem').value = '';
       document.getElementById('pickupDate').value = '';
       document.getElementById('pickupLocation').value = '';
       document.getElementById('pickupCost').value = '';
       document.getElementById('pickupNotes').value = '';
-
-      loadPickupOrders();
-    }
-
-    function loadPickupOrders() {
-      const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-      const container = document.getElementById('pickupOrders');
-
-      if (orders.length === 0) {
-        container.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📦</div><p>No completed orders at this time</p></div>`;
-        return;
-      }
-
-      container.innerHTML = orders.map((order, index) => `
-        <div class="order-card">
-          <span class="order-status">Ready for Pickup</span>
-          <h4>${order.name}</h4>
-          <div class="order-detail"><strong>Project:</strong> ${order.item}</div>
-          <div class="order-detail"><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</div>
-          ${order.notes ? `<div class="order-detail"><strong>Notes:</strong> ${order.notes}</div>` : ''}
-          <div class="order-detail"><strong>Pickup Date:</strong> ${new Date(order.date).toLocaleString()}</div>
-          <div class="order-location">
-            <span class="label">📍 Pickup Location</span>
-            <p>${order.location}</p>
-          </div>
-          ${isAdmin ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${index})" style="margin-top: 12px; width: 100%;">Remove Order</button>` : ''}
-        </div>
-      `).join('');
-    }
-
-    function deleteOrder(index) {
-      if (!isAdmin) return;
-      const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-      orders.splice(index, 1);
-      localStorage.setItem('pickupOrders', JSON.stringify(orders));
-      loadPickupOrders();
     }
 
     // Form Submission
     document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('additionalNotes').value.trim();
-
-      if (message) {
-        addMessage(name, email, message);
-      }
-
-      document.getElementById('orderForm').reset();
-      document.getElementById('successModal').classList.add('show');
+      alert('Thank you for your request! We will review your specifications and contact you shortly with a quote.');
+      this.reset();
     });
 
-    function closeModal() {
-      document.getElementById('successModal').classList.remove('show');
-    }
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
+    // Load data on page load
+    window.addEventListener('load', function() {
       loadPricing();
-      loadPickupOrders();
-      loadMessages();
+      loadOrders();
     });
   </script>
+
 </body>
 </html>
