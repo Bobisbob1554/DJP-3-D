@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Manufacturing Services - Professional Printing Solutions</title>
+  <title>3D Printing Fun - Amazing Creations!</title>
   <style>
     * {
       margin: 0;
@@ -17,7 +17,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-      background: #f8f9fa;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       min-height: 100vh;
       color: #1a1a1a;
       line-height: 1.6;
@@ -30,10 +30,10 @@
       left: 0;
       right: 0;
       background: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 3px solid #ff6b9d;
       padding: 16px 0;
       z-index: 100;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
     .nav-container {
@@ -46,9 +46,12 @@
     }
 
     .logo {
-      font-size: 1.3em;
-      font-weight: 700;
-      color: #31a645;
+      font-size: 1.5em;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       letter-spacing: -0.5px;
     }
 
@@ -61,58 +64,62 @@
     .nav-links a {
       text-decoration: none;
       color: #555;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95em;
-      transition: color 0.3s;
+      transition: all 0.3s;
     }
 
     .nav-links a:hover {
-      color: #31a645;
+      color: #ff6b9d;
+      transform: scale(1.05);
     }
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #ffffff 0%, #f5f7f5 100%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       padding: 140px 40px 100px;
       text-align: center;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 5px solid #ff6b9d;
       margin-top: 60px;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 3.2em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 3.5em;
+      font-weight: 900;
+      color: #ffffff;
       margin-bottom: 16px;
       letter-spacing: -1px;
       line-height: 1.2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero .subtitle {
-      font-size: 1.3em;
-      color: #666;
-      font-weight: 300;
+      font-size: 1.4em;
+      color: #fff;
+      font-weight: 400;
       margin-bottom: 32px;
       letter-spacing: 0.2px;
     }
 
     .hero .cta {
       display: inline-block;
-      background: #31a645;
+      background: #ff6b9d;
       color: white;
-      padding: 16px 48px;
-      border-radius: 4px;
+      padding: 18px 52px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1em;
+      font-weight: 700;
+      font-size: 1.1em;
       transition: all 0.3s;
-      border: 2px solid #31a645;
+      border: 3px solid #ff6b9d;
+      box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
     }
 
     .hero .cta:hover {
-      background: #2a8f38;
-      box-shadow: 0 8px 24px rgba(49, 166, 69, 0.2);
-      transform: translateY(-2px);
+      background: #ff4081;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 107, 157, 0.4);
     }
 
     /* Container */
@@ -127,18 +134,19 @@
     }
 
     .section-title {
-      font-size: 2.4em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 2.8em;
+      font-weight: 900;
+      color: #ffffff;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .section-subtitle {
-      font-size: 1.1em;
-      color: #666;
+      font-size: 1.2em;
+      color: #fff;
       margin-bottom: 50px;
-      font-weight: 300;
+      font-weight: 500;
     }
 
     /* Services Grid */
@@ -151,11 +159,12 @@
 
     .service-card {
       background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      border: 4px solid #ff6b9d;
+      border-radius: 15px;
       padding: 40px;
       transition: all 0.3s;
       position: relative;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .service-card::before {
@@ -164,50 +173,52 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: #31a645;
-      border-radius: 4px 4px 0 0;
+      height: 5px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px 15px 0 0;
     }
 
     .service-card:hover {
-      border-color: #31a645;
-      box-shadow: 0 8px 32px rgba(49, 166, 69, 0.08);
-      transform: translateY(-4px);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+      border-color: #667eea;
     }
 
     .service-icon {
-      font-size: 3em;
+      font-size: 3.5em;
       margin-bottom: 20px;
       display: block;
     }
 
     .service-card h3 {
-      font-size: 1.3em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 1.4em;
+      font-weight: 800;
+      color: #667eea;
       margin-bottom: 12px;
     }
 
     .service-card p {
-      color: #666;
-      font-size: 0.98em;
+      color: #555;
+      font-size: 1em;
       line-height: 1.7;
+      font-weight: 500;
     }
 
     /* Timeline */
     .timeline-container {
       background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      border: 4px solid #ff6b9d;
+      border-radius: 15px;
       padding: 40px;
       margin-bottom: 60px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .timeline-container h3 {
-      font-size: 1.5em;
-      font-weight: 700;
+      font-size: 1.6em;
+      font-weight: 800;
       margin-bottom: 40px;
-      color: #1a1a1a;
+      color: #667eea;
     }
 
     .timeline-grid {
@@ -218,7 +229,7 @@
 
     .timeline-item {
       position: relative;
-      padding-left: 40px;
+      padding-left: 50px;
     }
 
     .timeline-item::before {
@@ -226,41 +237,43 @@
       position: absolute;
       left: 0;
       top: 8px;
-      width: 24px;
-      height: 24px;
-      background: #31a645;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border-radius: 50%;
-      border: 2px solid #ffffff;
-      box-shadow: 0 0 0 2px #31a645;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 3px #ff6b9d;
     }
 
     .timeline-item h4 {
-      font-size: 1.1em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: #667eea;
       margin-bottom: 8px;
     }
 
     .timeline-item p {
-      color: #666;
-      font-size: 0.95em;
+      color: #555;
+      font-size: 0.98em;
       line-height: 1.6;
+      font-weight: 500;
     }
 
     /* Pricing Section */
     .pricing-container {
       background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      border: 4px solid #ff6b9d;
+      border-radius: 15px;
       padding: 40px;
       margin-bottom: 60px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .pricing-container h3 {
-      font-size: 1.5em;
-      font-weight: 700;
+      font-size: 1.6em;
+      font-weight: 800;
       margin-bottom: 30px;
-      color: #1a1a1a;
+      color: #667eea;
     }
 
     .pricing-list {
@@ -273,37 +286,41 @@
       justify-content: space-between;
       align-items: center;
       padding: 18px;
-      background: #f8f9fa;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      background: #f8f9ff;
+      border: 2px solid #667eea;
+      border-radius: 10px;
     }
 
     .pricing-item-name {
-      font-weight: 600;
-      color: #1a1a1a;
-      font-size: 1em;
+      font-weight: 700;
+      color: #667eea;
+      font-size: 1.05em;
     }
 
     .pricing-item-price {
-      font-size: 1.2em;
-      font-weight: 700;
-      color: #31a645;
+      font-size: 1.3em;
+      font-weight: 900;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     /* Form Section */
     .form-container {
       background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      border: 4px solid #ff6b9d;
+      border-radius: 15px;
       padding: 50px;
       margin-bottom: 60px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .form-container h3 {
-      font-size: 1.5em;
-      font-weight: 700;
+      font-size: 1.6em;
+      font-weight: 800;
       margin-bottom: 32px;
-      color: #1a1a1a;
+      color: #667eea;
     }
 
     .form-grid {
@@ -323,36 +340,37 @@
     }
 
     .form-group label {
-      font-weight: 600;
-      font-size: 0.95em;
-      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1em;
+      color: #667eea;
       margin-bottom: 8px;
       letter-spacing: 0.2px;
     }
 
     .form-group label .required {
-      color: #dc3545;
+      color: #ff6b9d;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
-      padding: 12px 14px;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
-      font-size: 0.95em;
+      padding: 14px 16px;
+      border: 2px solid #667eea;
+      border-radius: 10px;
+      font-size: 0.98em;
       font-family: inherit;
       background: #ffffff;
       color: #1a1a1a;
       transition: all 0.3s;
+      font-weight: 500;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #31a645;
-      box-shadow: 0 0 0 4px rgba(49, 166, 69, 0.08);
+      border-color: #ff6b9d;
+      box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.15);
     }
 
     .form-group textarea {
@@ -363,22 +381,22 @@
 
     /* Buttons */
     .btn {
-      background: #31a645;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
-      padding: 14px 32px;
-      border-radius: 4px;
+      padding: 16px 36px;
+      border-radius: 50px;
       cursor: pointer;
-      font-size: 1em;
-      font-weight: 600;
+      font-size: 1.05em;
+      font-weight: 700;
       transition: all 0.3s;
       letter-spacing: 0.3px;
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
     }
 
     .btn:hover {
-      background: #2a8f38;
-      box-shadow: 0 8px 24px rgba(49, 166, 69, 0.2);
       transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
     }
 
     .btn:active {
@@ -386,44 +404,49 @@
     }
 
     .btn-secondary {
-      background: #f0f0f0;
-      color: #31a645;
-      border: 1px solid #d0d0d0;
+      background: #ff6b9d;
+      color: white;
+      border: 2px solid #ff6b9d;
+      box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
     }
 
     .btn-secondary:hover {
-      background: #e8e8e8;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: #ff4081;
+      border-color: #ff4081;
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
     }
 
     .btn-small {
-      padding: 8px 16px;
-      font-size: 0.9em;
+      padding: 10px 20px;
+      font-size: 0.95em;
     }
 
     .btn-delete {
-      background: #dc3545;
+      background: #ff6b6b;
       color: white;
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
     }
 
     .btn-delete:hover {
-      background: #c82333;
+      background: #ff4757;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
     }
 
     /* Orders Grid */
     .orders-container {
       background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      border: 4px solid #ff6b9d;
+      border-radius: 15px;
       padding: 40px;
       margin-bottom: 60px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .orders-container h3 {
-      font-size: 1.5em;
-      font-weight: 700;
+      font-size: 1.6em;
+      font-weight: 800;
       margin-bottom: 30px;
-      color: #1a1a1a;
+      color: #667eea;
     }
 
     .orders-grid {
@@ -433,12 +456,13 @@
     }
 
     .order-card {
-      background: #ffffff;
-      border: 1px solid #e0e0e0;
-      border-radius: 4px;
+      background: linear-gradient(135deg, #f8f9ff 0%, #fff0f7 100%);
+      border: 3px solid #ff6b9d;
+      border-radius: 12px;
       padding: 24px;
       position: relative;
       transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     }
 
     .order-card::before {
@@ -447,57 +471,58 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: #31a645;
-      border-radius: 4px 4px 0 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px 12px 0 0;
     }
 
     .order-card:hover {
-      box-shadow: 0 8px 24px rgba(49, 166, 69, 0.12);
-      border-color: #31a645;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
     }
 
     .order-status {
       display: inline-block;
-      padding: 6px 14px;
-      background: #e8f5e9;
-      color: #31a645;
-      border-radius: 20px;
-      font-size: 0.8em;
-      font-weight: 700;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 25px;
+      font-size: 0.85em;
+      font-weight: 800;
       margin-bottom: 14px;
       letter-spacing: 0.5px;
     }
 
     .order-card h4 {
-      font-size: 1.1em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 1.2em;
+      font-weight: 800;
+      color: #667eea;
       margin-bottom: 14px;
     }
 
     .order-detail {
-      font-size: 0.95em;
+      font-size: 0.98em;
       color: #555;
       margin-bottom: 8px;
+      font-weight: 500;
     }
 
     .order-detail strong {
-      color: #1a1a1a;
-      font-weight: 600;
+      color: #667eea;
+      font-weight: 800;
     }
 
     .order-location {
-      background: #f8f9fa;
-      border-left: 3px solid #31a645;
+      background: linear-gradient(135deg, #f0f4ff 0%, #fff0f7 100%);
+      border-left: 4px solid #ff6b9d;
       padding: 14px;
       margin-top: 16px;
-      border-radius: 2px;
+      border-radius: 8px;
     }
 
     .order-location .label {
-      font-weight: 700;
-      color: #31a645;
+      font-weight: 800;
+      color: #667eea;
       text-transform: uppercase;
       font-size: 0.8em;
       letter-spacing: 0.5px;
@@ -507,7 +532,8 @@
 
     .order-location p {
       color: #1a1a1a;
-      font-size: 0.95em;
+      font-size: 0.98em;
+      font-weight: 500;
     }
 
     .empty-state {
@@ -519,14 +545,14 @@
     .empty-state-icon {
       font-size: 3em;
       margin-bottom: 16px;
-      opacity: 0.4;
+      opacity: 0.6;
     }
 
     /* Admin Panel */
     .admin-panel {
-      background: linear-gradient(135deg, #fffbea 0%, #fff8e1 100%);
-      border: 2px dashed #ffc107;
-      border-radius: 4px;
+      background: linear-gradient(135deg, #fff8dc 0%, #fff0f7 100%);
+      border: 3px dashed #ff6b9d;
+      border-radius: 15px;
       padding: 32px;
       margin-bottom: 40px;
       display: none;
@@ -537,9 +563,9 @@
     }
 
     .admin-panel h3 {
-      font-size: 1.2em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 1.3em;
+      font-weight: 800;
+      color: #667eea;
       margin-bottom: 24px;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -554,11 +580,19 @@
 
     .admin-form-grid input,
     .admin-form-grid textarea {
-      padding: 10px 12px;
-      border: 1px solid #ffc107;
-      border-radius: 4px;
-      font-size: 0.9em;
+      padding: 12px 14px;
+      border: 2px solid #ff6b9d;
+      border-radius: 10px;
+      font-size: 0.95em;
       font-family: inherit;
+      font-weight: 500;
+    }
+
+    .admin-form-grid input:focus,
+    .admin-form-grid textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
     }
 
     .admin-form-grid textarea {
@@ -568,17 +602,17 @@
 
     /* Messages Section */
     .messages-section {
-      background: #e3f2fd;
-      border: 2px dashed #2196f3;
-      border-radius: 4px;
+      background: linear-gradient(135deg, #e3f2fd 0%, #f0e6ff 100%);
+      border: 3px dashed #667eea;
+      border-radius: 15px;
       padding: 24px;
       margin-bottom: 24px;
     }
 
     .messages-section h4 {
-      font-size: 1em;
-      font-weight: 700;
-      color: #1a1a1a;
+      font-size: 1.1em;
+      font-weight: 800;
+      color: #667eea;
       margin-bottom: 16px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -586,54 +620,31 @@
 
     .message-item {
       background: #ffffff;
-      border-left: 4px solid #2196f3;
+      border-left: 4px solid #667eea;
       padding: 12px;
       margin-bottom: 12px;
-      border-radius: 2px;
+      border-radius: 8px;
     }
 
     .message-item-name {
-      font-weight: 700;
-      color: #1a1a1a;
-      font-size: 0.9em;
+      font-weight: 800;
+      color: #667eea;
+      font-size: 0.95em;
       margin-bottom: 4px;
     }
 
     .message-item-text {
       color: #555;
-      font-size: 0.9em;
+      font-size: 0.95em;
       margin-bottom: 8px;
       line-height: 1.5;
+      font-weight: 500;
     }
 
     .message-item-email {
       font-size: 0.8em;
       color: #999;
       margin-bottom: 8px;
-    }
-
-    .reply-form {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .reply-form textarea {
-      padding: 8px 10px;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
-      font-size: 0.85em;
-      font-family: inherit;
-      resize: vertical;
-      min-height: 60px;
-      grid-column: 1 / -1;
-    }
-
-    .reply-form .btn {
-      padding: 8px 16px;
-      font-size: 0.85em;
-      grid-column: 1 / -1;
     }
 
     /* Modal */
@@ -657,11 +668,11 @@
     .modal-content {
       background: #ffffff;
       padding: 48px;
-      border-radius: 4px;
+      border-radius: 20px;
       max-width: 500px;
       width: 90%;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      border-top: 3px solid #31a645;
+      border: 4px solid #667eea;
       position: relative;
     }
 
@@ -669,42 +680,46 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 24px;
+      font-size: 32px;
       cursor: pointer;
       color: #999;
       transition: color 0.3s;
+      font-weight: bold;
     }
 
     .modal-close:hover {
-      color: #31a645;
+      color: #ff6b9d;
     }
 
     .modal-content h2 {
-      font-size: 1.6em;
-      font-weight: 700;
-      color: #31a645;
-      margin-bottom: 16px;
+      font-size: 1.8em;
+      font-weight: 900;
+      color: #667eea;
+      margin-bottom: 24px;
     }
 
     .modal-content p {
       color: #666;
       line-height: 1.7;
-      font-size: 0.95em;
+      font-size: 1em;
+      font-weight: 500;
     }
 
     /* Footer */
     footer {
-      background: #1a1a1a;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: #fff;
       padding: 60px 40px;
       text-align: center;
       margin-top: 100px;
+      border-top: 5px solid #ff6b9d;
     }
 
     footer p {
-      color: #999;
+      color: #fff;
       margin-bottom: 8px;
-      font-size: 0.95em;
+      font-size: 0.98em;
+      font-weight: 500;
     }
 
     /* Login Modal */
@@ -724,34 +739,39 @@
     .login-box {
       background: white;
       padding: 48px;
-      border-radius: 4px;
+      border-radius: 20px;
       width: 90%;
       max-width: 400px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      border-top: 3px solid #31a645;
+      border: 4px solid #667eea;
     }
 
     .login-box h2 {
-      font-size: 1.8em;
-      font-weight: 700;
-      color: #31a645;
+      font-size: 2em;
+      font-weight: 900;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       margin-bottom: 24px;
       text-align: center;
     }
 
     .login-box input {
       width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #d0d0d0;
-      border-radius: 4px;
+      padding: 14px 16px;
+      border: 2px solid #667eea;
+      border-radius: 10px;
       margin-bottom: 16px;
-      font-size: 0.95em;
+      font-size: 1em;
+      font-weight: 500;
+      transition: all 0.3s;
     }
 
     .login-box input:focus {
       outline: none;
-      border-color: #31a645;
-      box-shadow: 0 0 0 4px rgba(49, 166, 69, 0.08);
+      border-color: #ff6b9d;
+      box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.15);
     }
 
     .login-box .btn {
@@ -759,10 +779,11 @@
     }
 
     .error-message {
-      color: #dc3545;
-      font-size: 0.9em;
+      color: #ff6b6b;
+      font-size: 0.95em;
       margin-bottom: 16px;
       text-align: center;
+      font-weight: 600;
     }
 
     @media (max-width: 768px) {
@@ -783,7 +804,7 @@
       }
 
       .hero h1 {
-        font-size: 2em;
+        font-size: 2.2em;
       }
 
       .container {
@@ -791,15 +812,11 @@
       }
 
       .section-title {
-        font-size: 1.8em;
+        font-size: 2em;
       }
 
       .form-container {
         padding: 30px 20px;
-      }
-
-      .reply-form {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -815,21 +832,21 @@
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <div class="logo">3D MANUFACTURING</div>
+      <div class="logo">🎨 3D PRINT AWESOME!</div>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#request">Request</a></li>
+        <li><a href="#services">Cool Stuff</a></li>
+        <li><a href="#timeline">How Long?</a></li>
+        <li><a href="#pricing">Prices</a></li>
+        <li><a href="#request">Order!</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <div class="hero">
-    <h1>Professional 3D Printing Services</h1>
-    <p class="subtitle">High-precision custom manufacturing for your specifications</p>
-    <a href="#request" class="cta">Request a Quote</a>
+    <h1>🎨 Make Amazing 3D Stuff! 🎨</h1>
+    <p class="subtitle">Transform your wild ideas into real creations!</p>
+    <a href="#request" class="cta">✨ Make Your Order Now! ✨</a>
   </div>
 
   <!-- Main Content -->
@@ -837,62 +854,62 @@
 
     <!-- Services Section -->
     <div class="section" id="services">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-subtitle">Comprehensive 3D printing solutions tailored to your needs</p>
+      <h2 class="section-title">🌟 Cool Stuff We Make! 🌟</h2>
+      <p class="section-subtitle">Pick what sounds super awesome to you!</p>
       
       <div class="services-grid">
         <div class="service-card">
-          <span class="service-icon">🔩</span>
-          <h3>Industrial Components</h3>
-          <p>Precision-engineered functional parts designed for performance and durability. Perfect for prototyping and low-volume production runs.</p>
+          <span class="service-icon">🔧</span>
+          <h3>Super Cool Parts!</h3>
+          <p>We can make awesome mechanical parts that actually work! Perfect for robots, gadgets, and amazing inventions!</p>
         </div>
         <div class="service-card">
-          <span class="service-icon">🏭</span>
-          <h3>Rapid Prototyping</h3>
-          <p>Quick turnaround prototypes for design verification and product development. Iterate faster and validate concepts efficiently.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">📐</span>
-          <h3>Custom Design</h3>
-          <p>Bring your specifications to life. From initial concept to finished product, we handle your complete manufacturing needs.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">📦</span>
-          <h3>Batch Production</h3>
-          <p>Multiple units with consistent quality and specifications. Scalable solutions for your growing production demands.</p>
+          <span class="service-icon">⚡</span>
+          <h3>Quick & Speedy!</h3>
+          <p>Need something fast? No problem! We can print your awesome designs super quick so you can start playing!</p>
         </div>
         <div class="service-card">
           <span class="service-icon">🎯</span>
-          <h3>Material Selection</h3>
-          <p>Expert guidance on material properties. Choose from PLA, PETG, TPU, and other advanced polymers for optimal results.</p>
+          <h3>Your Design!</h3>
+          <p>Have a crazy idea? We can make it real! From sketches to CAD files, we'll bring your imagination to life!</p>
         </div>
         <div class="service-card">
-          <span class="service-icon">⚙️</span>
-          <h3>Technical Consultation</h3>
-          <p>Professional advice on design optimization, tolerance specifications, and manufacturing feasibility for your projects.</p>
+          <span class="service-icon">📦</span>
+          <h3>Bunch Printing!</h3>
+          <p>Need lots of the same thing? We can print tons of copies with perfect quality every time!</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎨</span>
+          <h3>Color Choices!</h3>
+          <p>Pick your favorite colors! Red, blue, green, purple, black - we have so many awesome colors!</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">💡</span>
+          <h3>Expert Help!</h3>
+          <p>Stuck on your design? We can help you figure out the best way to make your awesome idea real!</p>
         </div>
       </div>
     </div>
 
     <!-- Timeline Section -->
     <div class="section" id="timeline">
-      <h2 class="section-title">Production Timeline</h2>
-      <p class="section-subtitle">We offer flexible scheduling to meet your project deadlines</p>
+      <h2 class="section-title">⏰ How Long Does It Take? ⏰</h2>
+      <p class="section-subtitle">Pick the speed that works for you!</p>
       
       <div class="timeline-container">
-        <h3>Standard Delivery Options</h3>
+        <h3>🚀 Speedy Options</h3>
         <div class="timeline-grid">
           <div class="timeline-item">
-            <h4>Express (Same Day)</h4>
-            <p>Small, straightforward prints completed within business hours. Ideal for urgent prototypes and simple geometries. Print time under 2 hours.</p>
+            <h4>⚡ Super Fast!</h4>
+            <p>Get it TODAY! Perfect for simple, quick prints. Usually done in less than 2 hours. Awesome for emergencies!</p>
           </div>
           <div class="timeline-item">
-            <h4>Standard (1-2 Business Days)</h4>
-            <p>Medium complexity prints with standard preparation and quality assurance. Print time 2-6 hours including setup and finishing.</p>
+            <h4>💨 Regular Speed</h4>
+            <p>Ready in 1-2 days! This is our most popular option. We'll make sure it's perfect quality!</p>
           </div>
           <div class="timeline-item">
-            <h4>Custom (2-5 Business Days)</h4>
-            <p>Large or complex designs requiring extensive optimization. Comprehensive design review, material testing, and quality control included.</p>
+            <h4>🎯 Custom Awesome</h4>
+            <p>Need something super special? We take 2-5 days to make it absolutely perfect with extra details!</p>
           </div>
         </div>
       </div>
@@ -900,14 +917,14 @@
 
     <!-- Pricing Section -->
     <div class="section" id="pricing">
-      <h2 class="section-title">Pricing</h2>
-      <p class="section-subtitle">Competitive rates for professional quality</p>
+      <h2 class="section-title">💰 How Much? 💰</h2>
+      <p class="section-subtitle">Awesome prices for awesome creations!</p>
       
       <div class="pricing-container">
-        <h3>Current Service Rates</h3>
+        <h3>💵 Our Prices</h3>
         <div id="pricingList" class="pricing-list">
-          <div style="text-align: center; color: #999; padding: 40px; font-size: 0.98em;">
-            Custom quotes available upon request
+          <div style="text-align: center; color: #999; padding: 40px; font-size: 1em; font-weight: 600;">
+            🤔 Ask us for custom prices! Every awesome creation is different!
           </div>
         </div>
       </div>
@@ -915,99 +932,99 @@
 
     <!-- Request Form Section -->
     <div class="section" id="request">
-      <h2 class="section-title">Request a Quote</h2>
-      <p class="section-subtitle">Provide your project details for a detailed proposal</p>
+      <h2 class="section-title">📝 Tell Us Your Idea! 📝</h2>
+      <p class="section-subtitle">Share all the details so we can make it awesome!</p>
       
       <div class="form-container">
-        <h3>Print Request Form</h3>
+        <h3>✨ Order Your Awesome Creation! ✨</h3>
         <form id="orderForm">
           <div class="form-grid">
             <div class="form-group">
-              <label>Full Name <span class="required">*</span></label>
-              <input type="text" id="name" placeholder="Your name" required>
+              <label>Your Name <span class="required">*</span></label>
+              <input type="text" id="name" placeholder="What's your name?" required>
             </div>
             <div class="form-group">
-              <label>Email Address <span class="required">*</span></label>
+              <label>Your Email <span class="required">*</span></label>
               <input type="email" id="email" placeholder="your@email.com" required>
             </div>
             <div class="form-group">
-              <label>Project Name</label>
-              <input type="text" id="projectName" placeholder="Project identifier">
+              <label>What's it called?</label>
+              <input type="text" id="projectName" placeholder="Project name">
             </div>
             <div class="form-group">
-              <label>Preferred Material</label>
+              <label>Pick a Color/Material</label>
               <select id="material">
-                <option value="PLA">PLA - Cost-effective, standard application</option>
-                <option value="PETG">PETG - Enhanced durability and strength</option>
-                <option value="TPU">TPU - Flexible, elastomer properties</option>
-                <option value="Other">Consult on material selection</option>
+                <option value="PLA">🟡 PLA - Cool and cheap!</option>
+                <option value="PETG">🟢 PETG - Super strong!</option>
+                <option value="TPU">🟣 TPU - Bendy and fun!</option>
+                <option value="Other">❓ Help me pick!</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Color/Finish Preference</label>
-              <input type="text" id="color" placeholder="e.g., Natural, Black, White">
+              <label>What color do you want?</label>
+              <input type="text" id="color" placeholder="Red, Blue, Rainbow?">
             </div>
             <div class="form-group">
-              <label>Quantity Required</label>
+              <label>How many do you want?</label>
               <input type="number" id="quantity" min="1" value="1">
             </div>
             <div class="form-group full">
-              <label>Project Specifications & Design Files <span class="required">*</span></label>
-              <textarea id="description" placeholder="Detailed project description, CAD file links, design specifications, dimensions, tolerance requirements, and any special instructions." required></textarea>
+              <label>Tell us ALL about your idea! <span class="required">*</span></label>
+              <textarea id="description" placeholder="Describe your awesome idea! Send us pictures, measurements, what it should do - everything!" required></textarea>
             </div>
             <div class="form-group full">
-              <label>Additional Notes or Concerns</label>
-              <textarea id="additionalNotes" placeholder="Let us know if you have concerns about color availability, print duration, or any other considerations. We'll let you know if we can accommodate."></textarea>
+              <label>Any other cool ideas?</label>
+              <textarea id="additionalNotes" placeholder="Anything else we should know? Any wishes or special requests?"></textarea>
             </div>
           </div>
-          <button type="submit" class="btn" style="width: 100%; padding: 16px;">Submit Request</button>
+          <button type="submit" class="btn" style="width: 100%; padding: 18px; font-size: 1.1em;">🎉 Send My Awesome Idea! 🎉</button>
         </form>
       </div>
     </div>
 
     <!-- Orders Section -->
     <div class="section">
-      <h2 class="section-title">Completed Orders</h2>
-      <p class="section-subtitle">Ready for pickup</p>
+      <h2 class="section-title">📦 Ready to Pick Up! 📦</h2>
+      <p class="section-subtitle">Your awesome stuff is waiting for you!</p>
       
       <div class="orders-container">
-        <h3>Queue Status</h3>
-        <button class="btn btn-secondary btn-small" onclick="openLoginModal()">Admin Access</button>
+        <h3>🎊 Completed Creations! 🎊</h3>
+        <button class="btn btn-secondary btn-small" onclick="openLoginModal()">🔐 Admin Zone</button>
         
         <div id="adminPanel" class="admin-panel">
-          <h3>📋 Admin Panel</h3>
+          <h3>🛠️ Admin Controls 🛠️</h3>
 
           <!-- Messages Section -->
           <div class="messages-section">
-            <h4>💬 Customer Messages</h4>
+            <h4>💬 What People Said!</h4>
             <div id="messagesContainer">
-              <div style="text-align: center; color: #999; padding: 20px; font-size: 0.9em;">
-                No customer messages yet
+              <div style="text-align: center; color: #999; padding: 20px; font-size: 0.95em; font-weight: 600;">
+                No messages yet!
               </div>
             </div>
           </div>
 
           <!-- Add Completed Order -->
           <div style="margin-bottom: 24px;">
-            <h4 style="font-size: 1em; font-weight: 700; margin-bottom: 12px;">Add Completed Order</h4>
+            <h4 style="font-size: 1.1em; font-weight: 800; margin-bottom: 12px; color: #667eea;">➕ Add Finished Creation</h4>
             <div class="admin-form-grid">
               <input type="text" id="pickupName" placeholder="Customer Name">
-              <input type="text" id="pickupItem" placeholder="Project Description">
+              <input type="text" id="pickupItem" placeholder="What did we make?">
               <input type="datetime-local" id="pickupDate">
               <input type="text" id="pickupLocation" placeholder="Pickup Location">
-              <input type="number" id="pickupCost" placeholder="Amount Due" step="0.01" min="0">
-              <input type="text" id="pickupNotes" placeholder="Notes (optional)">
-              <button class="btn btn-small" onclick="addPickupOrder()" style="grid-column: 1 / -1;">Add Completed Order</button>
+              <input type="number" id="pickupCost" placeholder="How much?" step="0.01" min="0">
+              <input type="text" id="pickupNotes" placeholder="Any notes?">
+              <button class="btn btn-small" onclick="addPickupOrder()" style="grid-column: 1 / -1;">✅ Add to Pickup List</button>
             </div>
           </div>
 
           <!-- Add Pricing -->
           <div>
-            <h4 style="font-size: 1em; font-weight: 700; margin-bottom: 12px;">Add Pricing</h4>
+            <h4 style="font-size: 1.1em; font-weight: 800; margin-bottom: 12px; color: #667eea;">💵 Add Prices</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-              <input type="text" id="pricingName" placeholder="Service Name">
+              <input type="text" id="pricingName" placeholder="Service name">
               <input type="number" id="pricingAmount" placeholder="Price" step="0.01" min="0">
-              <button class="btn btn-small" onclick="addPricing()" style="grid-column: 1 / -1;">Add Pricing</button>
+              <button class="btn btn-small" onclick="addPricing()" style="grid-column: 1 / -1;">💰 Add Price</button>
             </div>
           </div>
         </div>
@@ -1015,7 +1032,7 @@
         <div id="ordersGrid" class="orders-grid">
           <div class="empty-state">
             <div class="empty-state-icon">📭</div>
-            <p>No orders yet</p>
+            <p style="font-weight: 600; font-size: 1.05em;">No creations ready yet!</p>
           </div>
         </div>
       </div>
@@ -1025,18 +1042,18 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 3D Manufacturing Services. All rights reserved.</p>
-    <p>Professional 3D Printing Solutions</p>
+    <p>🎉 © 2024 3D Print Awesome! All rights reserved! 🎉</p>
+    <p>Making amazing creations come to life! 🚀</p>
   </footer>
 
   <!-- Login Modal -->
-  <div id="loginModal" class="login-modal">
+  <div id="loginModal" class="login-modal" style="display: none;">
     <div class="login-box">
       <span class="modal-close" onclick="closeLoginModal()">&times;</span>
-      <h2>Admin Login</h2>
+      <h2>🔐 Admin Zone</h2>
       <div id="errorMessage" class="error-message" style="display: none;"></div>
       <input type="password" id="adminPassword" placeholder="Enter admin password" onkeypress="handlePasswordKeypress(event)">
-      <button class="btn" onclick="verifyPassword()" style="width: 100%;">Login</button>
+      <button class="btn" onclick="verifyPassword()" style="width: 100%;">🔓 Unlock!</button>
     </div>
   </div>
 
@@ -1047,7 +1064,7 @@
 
     // Open Login Modal
     function openLoginModal() {
-      document.getElementById('loginModal').classList.add('login-modal');
+      document.getElementById('loginModal').style.display = 'flex';
       document.getElementById('adminPassword').value = '';
       document.getElementById('errorMessage').style.display = 'none';
       document.getElementById('adminPassword').focus();
@@ -1055,7 +1072,7 @@
 
     // Close Login Modal
     function closeLoginModal() {
-      document.getElementById('loginModal').classList.remove('login-modal');
+      document.getElementById('loginModal').style.display = 'none';
       document.getElementById('adminPassword').value = '';
       document.getElementById('errorMessage').style.display = 'none';
       isAdminAuthenticated = false;
@@ -1079,7 +1096,7 @@
         closeLoginModal();
         loadOrders();
       } else {
-        errorMessage.textContent = 'Incorrect password. Please try again.';
+        errorMessage.textContent = '❌ Oops! Wrong password. Try again!';
         errorMessage.style.display = 'block';
         document.getElementById('adminPassword').value = '';
         document.getElementById('adminPassword').focus();
@@ -1089,7 +1106,7 @@
     // Add Pickup Order
     function addPickupOrder() {
       if (!isAdminAuthenticated) {
-        alert('Please login first');
+        alert('🔒 Please login first!');
         return;
       }
 
@@ -1101,7 +1118,7 @@
       const notes = document.getElementById('pickupNotes').value;
 
       if (!name || !item || !date || !location || !cost) {
-        alert('Please fill in all required fields');
+        alert('⚠️ Please fill in all the important stuff!');
         return;
       }
 
@@ -1119,12 +1136,13 @@
       localStorage.setItem('orders', JSON.stringify(orders));
       clearOrderForm();
       loadOrders();
+      alert('✅ Creation added! Awesome!');
     }
 
     // Add Pricing
     function addPricing() {
       if (!isAdminAuthenticated) {
-        alert('Please login first');
+        alert('🔒 Please login first!');
         return;
       }
 
@@ -1132,7 +1150,7 @@
       const amount = document.getElementById('pricingAmount').value;
 
       if (!name || !amount) {
-        alert('Please fill in all fields');
+        alert('⚠️ Please fill in all the fields!');
         return;
       }
 
@@ -1147,6 +1165,7 @@
       document.getElementById('pricingName').value = '';
       document.getElementById('pricingAmount').value = '';
       loadPricing();
+      alert('💰 Price added! Nice!');
     }
 
     // Load Orders
@@ -1155,23 +1174,23 @@
       const ordersGrid = document.getElementById('ordersGrid');
 
       if (orders.length === 0) {
-        ordersGrid.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><p>No orders yet</p></div>';
+        ordersGrid.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📭</div><p style="font-weight: 600; font-size: 1.05em;">No creations ready yet!</p></div>';
         return;
       }
 
       ordersGrid.innerHTML = orders.map(order => `
         <div class="order-card">
-          <span class="order-status">Ready for Pickup</span>
-          <h4>${order.name}</h4>
-          <div class="order-detail"><strong>Project:</strong> ${order.item}</div>
-          <div class="order-detail"><strong>Amount Due:</strong> $${parseFloat(order.cost).toFixed(2)}</div>
-          <div class="order-detail"><strong>Pickup Date:</strong> ${new Date(order.date).toLocaleString()}</div>
+          <span class="order-status">✨ READY! ✨</span>
+          <h4>👤 ${order.name}</h4>
+          <div class="order-detail"><strong>🎨 Creation:</strong> ${order.item}</div>
+          <div class="order-detail"><strong>💰 Cost:</strong> $${parseFloat(order.cost).toFixed(2)}</div>
+          <div class="order-detail"><strong>📅 Ready On:</strong> ${new Date(order.date).toLocaleString()}</div>
           <div class="order-location">
-            <span class="label">Pickup Location</span>
+            <span class="label">📍 Pick it up here!</span>
             <p>${order.location}</p>
           </div>
-          ${order.notes ? `<div class="order-detail"><strong>Notes:</strong> ${order.notes}</div>` : ''}
-          ${isAdminAuthenticated ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${order.id})" style="margin-top: 12px; width: 100%;">Delete</button>` : ''}
+          ${order.notes ? `<div class="order-detail"><strong>📝 Notes:</strong> ${order.notes}</div>` : ''}
+          ${isAdminAuthenticated ? `<button class="btn btn-delete btn-small" onclick="deleteOrder(${order.id})" style="margin-top: 12px; width: 100%;">🗑️ Delete</button>` : ''}
         </div>
       `).join('');
     }
@@ -1179,15 +1198,16 @@
     // Delete Order
     function deleteOrder(id) {
       if (!isAdminAuthenticated) {
-        alert('Please login first');
+        alert('🔒 Please login first!');
         return;
       }
 
-      if (confirm('Are you sure you want to delete this order?')) {
+      if (confirm('⚠️ Are you sure? This can\'t be undone!')) {
         let orders = JSON.parse(localStorage.getItem('orders')) || [];
         orders = orders.filter(order => order.id !== id);
         localStorage.setItem('orders', JSON.stringify(orders));
         loadOrders();
+        alert('✅ Deleted!');
       }
     }
 
@@ -1197,7 +1217,7 @@
       const pricingList = document.getElementById('pricingList');
 
       if (pricing.length === 0) {
-        pricingList.innerHTML = '<div style="text-align: center; color: #999; padding: 40px; font-size: 0.98em;">Custom quotes available upon request</div>';
+        pricingList.innerHTML = '<div style="text-align: center; color: #999; padding: 40px; font-size: 1em; font-weight: 600;">🤔 Ask us for custom prices! Every awesome creation is different!</div>';
         return;
       }
 
@@ -1205,7 +1225,7 @@
         <div class="pricing-item">
           <span class="pricing-item-name">${item.name}</span>
           <span class="pricing-item-price">$${parseFloat(item.amount).toFixed(2)}</span>
-          ${isAdminAuthenticated ? `<button class="btn btn-delete btn-small" onclick="deletePricing(${item.id})" style="margin-left: 8px;">Delete</button>` : ''}
+          ${isAdminAuthenticated ? `<button class="btn btn-delete btn-small" onclick="deletePricing(${item.id})" style="margin-left: 8px;">🗑️</button>` : ''}
         </div>
       `).join('');
     }
@@ -1213,15 +1233,16 @@
     // Delete Pricing
     function deletePricing(id) {
       if (!isAdminAuthenticated) {
-        alert('Please login first');
+        alert('🔒 Please login first!');
         return;
       }
 
-      if (confirm('Are you sure you want to delete this pricing?')) {
+      if (confirm('⚠️ Delete this price? Sure?')) {
         let pricing = JSON.parse(localStorage.getItem('pricing')) || [];
         pricing = pricing.filter(item => item.id !== id);
         localStorage.setItem('pricing', JSON.stringify(pricing));
         loadPricing();
+        alert('✅ Deleted!');
       }
     }
 
@@ -1238,7 +1259,7 @@
     // Form Submission
     document.getElementById('orderForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Thank you for your request! We will review your specifications and contact you shortly with a quote.');
+      alert('🎉 Awesome! Your awesome idea is on the way! We\'ll get back to you super soon! 🚀');
       this.reset();
     });
 
