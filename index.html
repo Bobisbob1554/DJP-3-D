@@ -13,20 +13,20 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      background: linear-gradient(135deg, #f5f7f5 0%, #e8ebe8 100%);
       min-height: 100vh;
       padding: 20px;
-      color: #f0f0f0;
+      color: #1a1a1a;
     }
 
     header {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
       padding: 40px 20px;
       border-radius: 8px;
       text-align: center;
       margin-bottom: 40px;
-      box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
-      border: 2px solid #ff8c42;
+      box-shadow: 0 8px 32px rgba(45, 80, 22, 0.3);
+      border: 2px solid #4a7c2c;
     }
 
     h1 {
@@ -49,18 +49,18 @@
     }
 
     .section {
-      background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #f9fbf9 100%);
       padding: 40px;
       border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 32px rgba(45, 80, 22, 0.15);
       margin-bottom: 30px;
-      border: 1px solid #ff6b35;
+      border: 1px solid #d4e8d1;
     }
 
     .section h2 {
-      color: #ff6b35;
+      color: #2d5016;
       margin-bottom: 30px;
-      border-bottom: 3px solid #ff6b35;
+      border-bottom: 3px solid #4a7c2c;
       padding-bottom: 15px;
       font-size: 2em;
     }
@@ -74,18 +74,18 @@
     }
 
     .capability-card {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 100%);
       color: white;
       padding: 20px;
       border-radius: 8px;
       text-align: center;
-      border: 2px solid #ff8c42;
+      border: 2px solid #4a7c2c;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .capability-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+      box-shadow: 0 8px 24px rgba(74, 124, 44, 0.4);
     }
 
     .capability-card .icon {
@@ -105,15 +105,15 @@
     }
 
     .timeline {
-      background: #1a1a1a;
+      background: #f0f5ed;
       padding: 20px;
       border-radius: 8px;
       margin-top: 20px;
-      border-left: 4px solid #ff6b35;
+      border-left: 4px solid #4a7c2c;
     }
 
     .timeline h3 {
-      color: #ff6b35;
+      color: #2d5016;
       margin-bottom: 15px;
     }
 
@@ -122,7 +122,7 @@
       gap: 15px;
       margin-bottom: 15px;
       padding-bottom: 15px;
-      border-bottom: 1px solid #444;
+      border-bottom: 1px solid #d4e8d1;
     }
 
     .timeline-item:last-child {
@@ -138,13 +138,72 @@
     }
 
     .timeline-content h4 {
-      color: #ff6b35;
+      color: #2d5016;
       margin-bottom: 5px;
     }
 
     .timeline-content p {
-      color: #aaa;
+      color: #555;
       font-size: 0.95em;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      background: #f0f5ed;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border-left: 4px solid #4a7c2c;
+    }
+
+    .pricing-section h3 {
+      color: #2d5016;
+      margin-bottom: 15px;
+    }
+
+    .pricing-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #d4e8d1;
+    }
+
+    .pricing-item:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-item-name {
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .pricing-item-price {
+      color: #4a7c2c;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .add-pricing-form {
+      background: #f0f5ed;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+      border: 1px dashed #4a7c2c;
+    }
+
+    .pricing-input-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .pricing-input-group input {
+      padding: 8px;
+      border: 2px solid #4a7c2c;
+      border-radius: 4px;
+      font-size: 0.9em;
     }
 
     /* Order Form Section */
@@ -155,7 +214,7 @@
     .form-group label {
       display: block;
       margin-bottom: 8px;
-      color: #ff6b35;
+      color: #2d5016;
       font-weight: 600;
     }
 
@@ -164,21 +223,21 @@
     .form-group textarea {
       width: 100%;
       padding: 12px;
-      border: 2px solid #ff6b35;
+      border: 2px solid #4a7c2c;
       border-radius: 6px;
       font-size: 1em;
       font-family: inherit;
       transition: border-color 0.3s;
-      background: #1a1a1a;
-      color: #f0f0f0;
+      background: #ffffff;
+      color: #1a1a1a;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: #ff8c42;
-      box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+      border-color: #2d5016;
+      box-shadow: 0 0 10px rgba(74, 124, 44, 0.3);
     }
 
     .form-group textarea {
@@ -187,9 +246,9 @@
     }
 
     .btn {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 100%);
       color: white;
-      border: 2px solid #ff6b35;
+      border: 2px solid #4a7c2c;
       padding: 15px 30px;
       border-radius: 6px;
       cursor: pointer;
@@ -202,11 +261,17 @@
     .btn:hover {
       opacity: 0.9;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+      box-shadow: 0 8px 24px rgba(74, 124, 44, 0.4);
     }
 
     .btn:active {
       transform: translateY(0);
+    }
+
+    .btn-small {
+      width: auto;
+      padding: 8px 15px;
+      font-size: 0.9em;
     }
 
     /* Pickup Orders Section */
@@ -217,8 +282,8 @@
     }
 
     .order-card {
-      background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
-      border: 2px solid #ff6b35;
+      background: linear-gradient(135deg, #ffffff 0%, #f9fbf9 100%);
+      border: 2px solid #4a7c2c;
       border-radius: 8px;
       padding: 20px;
       position: relative;
@@ -226,8 +291,8 @@
     }
 
     .order-card.ready {
-      border-color: #4CAF50;
-      box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+      border-color: #2d5016;
+      box-shadow: 0 0 20px rgba(74, 124, 44, 0.2);
     }
 
     .order-card.ready::before {
@@ -236,7 +301,7 @@
       top: -10px;
       right: -10px;
       font-size: 4em;
-      color: #4CAF50;
+      color: #4a7c2c;
       opacity: 0.2;
     }
 
@@ -250,23 +315,23 @@
     }
 
     .order-status.ready {
-      background: #4CAF50;
+      background: #4a7c2c;
       color: white;
     }
 
     .order-status.printing {
-      background: #ff6b35;
+      background: #2d5016;
       color: white;
     }
 
     .order-card h3 {
-      color: #ff6b35;
+      color: #2d5016;
       margin-bottom: 10px;
       font-size: 1.3em;
     }
 
     .order-details {
-      color: #aaa;
+      color: #555;
       font-size: 0.95em;
       line-height: 1.6;
       margin-bottom: 15px;
@@ -277,31 +342,31 @@
     }
 
     .order-details strong {
-      color: #ff6b35;
+      color: #2d5016;
     }
 
     .pickup-info {
-      background: #1a1a1a;
+      background: #f0f5ed;
       padding: 15px;
       border-radius: 6px;
       margin-top: 15px;
-      border-left: 4px solid #ff6b35;
+      border-left: 4px solid #4a7c2c;
     }
 
     .pickup-info p {
-      color: #f0f0f0;
+      color: #1a1a1a;
       margin-bottom: 5px;
     }
 
     .pickup-info .label {
       font-weight: bold;
-      color: #ff6b35;
+      color: #2d5016;
     }
 
     .empty-state {
       text-align: center;
       padding: 40px 20px;
-      color: #666;
+      color: #999;
     }
 
     .empty-state .icon {
@@ -310,15 +375,15 @@
     }
 
     .admin-section {
-      background: #1a1a1a;
-      border: 2px dashed #ff6b35;
+      background: #f0f5ed;
+      border: 2px dashed #4a7c2c;
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 20px;
     }
 
     .admin-section h3 {
-      color: #ff6b35;
+      color: #2d5016;
       margin-bottom: 15px;
     }
 
@@ -329,9 +394,9 @@
     }
 
     .admin-btn {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 100%);
       color: white;
-      border: 2px solid #ff6b35;
+      border: 2px solid #4a7c2c;
       padding: 10px 15px;
       border-radius: 6px;
       cursor: pointer;
@@ -341,7 +406,7 @@
 
     .admin-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      box-shadow: 0 4px 12px rgba(74, 124, 44, 0.3);
     }
 
     .admin-btn.delete {
@@ -360,15 +425,15 @@
     }
 
     .business-card {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 100%);
       color: white;
       padding: 30px;
       border-radius: 8px;
       margin: 20px 0;
-      box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
+      box-shadow: 0 8px 24px rgba(74, 124, 44, 0.4);
       font-size: 0.9em;
       line-height: 1.8;
-      border: 2px solid #ff8c42;
+      border: 2px solid #4a7c2c;
     }
 
     .business-card h3 {
@@ -379,7 +444,7 @@
     .business-card .url {
       font-size: 1.2em;
       font-weight: bold;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.2);
       padding: 10px;
       border-radius: 6px;
       margin: 10px 0;
@@ -387,9 +452,9 @@
     }
 
     .print-btn {
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 100%);
       color: white;
-      border: 2px solid #ff8c42;
+      border: 2px solid #4a7c2c;
       padding: 12px 25px;
       border-radius: 6px;
       cursor: pointer;
@@ -412,6 +477,10 @@
       }
 
       .admin-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-input-group {
         grid-template-columns: 1fr;
       }
     }
@@ -438,7 +507,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.5);
       border-radius: 0;
     }
 
@@ -449,22 +518,22 @@
     }
 
     .modal-content {
-      background-color: #1f1f1f;
+      background-color: #ffffff;
       padding: 30px;
       border-radius: 12px;
       max-width: 500px;
       width: 90%;
-      box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
-      border: 2px solid #ff6b35;
+      box-shadow: 0 10px 40px rgba(45, 80, 22, 0.3);
+      border: 2px solid #4a7c2c;
     }
 
     .modal-content h2 {
-      color: #ff6b35;
+      color: #2d5016;
       margin-bottom: 20px;
     }
 
     .modal-content p {
-      color: #aaa;
+      color: #555;
     }
 
     .close-modal {
@@ -476,16 +545,16 @@
     }
 
     .close-modal:hover {
-      color: #ff6b35;
+      color: #2d5016;
     }
 
     .success-message {
-      background: #1a3a1a;
-      color: #4CAF50;
+      background: #e8f5e9;
+      color: #2d5016;
       padding: 15px;
       border-radius: 6px;
       margin-bottom: 20px;
-      border: 1px solid #4CAF50;
+      border: 1px solid #4a7c2c;
     }
   </style>
 </head>
@@ -567,15 +636,39 @@
         </div>
       </div>
 
-      <p style="margin-top: 20px; color: #aaa; font-style: italic;">
+      <p style="margin-top: 20px; color: #555; font-style: italic;">
         💡 <strong>Tip:</strong> Smaller items print faster. Bring a design or description, and I can give you a time estimate!
       </p>
+    </div>
+
+    <!-- Pricing Section -->
+    <div class="section">
+      <h2>💰 Pricing</h2>
+      <p style="color: #555; margin-bottom: 20px;">Here's how much different prints cost:</p>
+      
+      <div class="pricing-section">
+        <h3>Current Pricing</h3>
+        <div id="pricingList">
+          <div style="text-align: center; color: #999; padding: 20px;">
+            <p>No pricing set yet. Admin can add pricing below!</p>
+          </div>
+        </div>
+
+        <div id="adminPricingSection" class="add-pricing-form" style="display: none;">
+          <h4 style="color: #2d5016; margin-bottom: 10px;">➕ Add Pricing</h4>
+          <div class="pricing-input-group">
+            <input type="text" id="pricingName" placeholder="Item name (e.g., Phone Stand)">
+            <input type="number" id="pricingCost" placeholder="Price (e.g., 5.00)" step="0.01" min="0">
+            <button class="admin-btn btn-small" onclick="addPricing()">Add</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Submit Order Section -->
     <div class="section">
       <h2>📝 Request a Print</h2>
-      <p style="color: #aaa; margin-bottom: 20px;">Tell me what you'd like to get 3D printed, and I'll give you a time estimate!</p>
+      <p style="color: #555; margin-bottom: 20px;">Tell me what you'd like to get 3D printed, and I'll give you a time estimate!</p>
       
       <form id="orderForm">
         <div class="form-group">
@@ -615,7 +708,7 @@
     <!-- Pickup Orders Section -->
     <div class="section">
       <h2>📦 Ready for Pickup</h2>
-      <p style="color: #aaa; margin-bottom: 20px;">Your prints are ready! Here's when and where to pick them up:</p>
+      <p style="color: #555; margin-bottom: 20px;">Your prints are ready! Here's when and where to pick them up:</p>
 
       <div id="adminSection" class="admin-section" style="display: none;">
         <h3>🔧 Admin - Add Ready Pickup</h3>
@@ -637,14 +730,18 @@
             <input type="text" id="pickupLocation" placeholder="e.g., Room 201, Locker area, etc.">
           </div>
           <div class="form-group">
+            <label for="pickupCost">Cost / Price</label>
+            <input type="number" id="pickupCost" placeholder="e.g., 5.00" step="0.01" min="0">
+          </div>
+          <div class="form-group">
             <label for="pickupNotes">Notes (optional)</label>
             <input type="text" id="pickupNotes" placeholder="Any special instructions">
           </div>
-          <button type="button" class="btn" style="background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%); border-color: #4CAF50;" onclick="addPickupOrder()">Add Pickup Order</button>
+          <button type="button" class="btn" style="background: linear-gradient(135deg, #4a7c2c 0%, #2d5016 100%); border-color: #4a7c2c;" onclick="addPickupOrder()">Add Pickup Order</button>
         </div>
       </div>
 
-      <button type="button" class="btn" style="background: #444; border-color: #666; margin-bottom: 20px;" onclick="toggleAdminPanel()">Toggle Admin Panel</button>
+      <button type="button" class="btn" style="background: #888; border-color: #888; margin-bottom: 20px;" onclick="toggleAdminPanel()">Toggle Admin Panel</button>
 
       <div id="pickupOrders" class="orders-grid">
         <div class="empty-state">
@@ -657,7 +754,7 @@
     <!-- Business Card Section -->
     <div class="section business-card-section">
       <h2>📇 Share This Link</h2>
-      <p style="color: #aaa; margin-bottom: 20px;">Print out the business card below and hand it out to friends!</p>
+      <p style="color: #555; margin-bottom: 20px;">Print out the business card below and hand it out to friends!</p>
       
       <div class="business-card">
         <h3>🖨️ 3D Prints</h3>
@@ -678,12 +775,67 @@
     <div class="modal-content">
       <span class="close-modal" onclick="closeModal()">&times;</span>
       <h2>✅ Order Submitted!</h2>
-      <p style="color: #aaa; margin-bottom: 20px;">Thanks for submitting your print request! I'll review it and let you know when I have a time estimate for you. Check back soon for pickup information!</p>
+      <p style="color: #555; margin-bottom: 20px;">Thanks for submitting your print request! I'll review it and let you know when I have a time estimate for you. Check back soon for pickup information!</p>
       <button class="btn" onclick="closeModal()" style="width: 100%;">Close</button>
     </div>
   </div>
 
   <script>
+    // Load pricing from localStorage
+    function loadPricing() {
+      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+      const container = document.getElementById('pricingList');
+      
+      if (pricing.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; color: #999; padding: 20px;">
+            <p>No pricing set yet. Admin can add pricing below!</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = pricing.map((item, index) => `
+        <div class="pricing-item">
+          <span class="pricing-item-name">${item.name}</span>
+          <div>
+            <span class="pricing-item-price">$${parseFloat(item.cost).toFixed(2)}</span>
+            <button class="admin-btn delete btn-small" style="margin-left: 10px;" onclick="deletePricing(${index})">Remove</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Add pricing
+    function addPricing() {
+      const name = document.getElementById('pricingName').value.trim();
+      const cost = document.getElementById('pricingCost').value.trim();
+
+      if (!name || !cost) {
+        alert('Please fill in both name and price');
+        return;
+      }
+
+      const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+      pricing.push({ name, cost });
+      localStorage.setItem('pricing', JSON.stringify(pricing));
+
+      document.getElementById('pricingName').value = '';
+      document.getElementById('pricingCost').value = '';
+
+      loadPricing();
+    }
+
+    // Delete pricing
+    function deletePricing(index) {
+      if (confirm('Remove this pricing?')) {
+        const pricing = JSON.parse(localStorage.getItem('pricing')) || [];
+        pricing.splice(index, 1);
+        localStorage.setItem('pricing', JSON.stringify(pricing));
+        loadPricing();
+      }
+    }
+
     // Load pickup orders from localStorage
     function loadPickupOrders() {
       const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
@@ -706,11 +858,12 @@
           <div class="order-details">
             <p><strong>Item:</strong> ${order.item}</p>
             <p><strong>Ready:</strong> ${new Date(order.readyDate).toLocaleString()}</p>
+            ${order.cost ? `<p><strong>Cost:</strong> $${parseFloat(order.cost).toFixed(2)}</p>` : ''}
           </div>
           <div class="pickup-info">
             <p class="label">📍 Pickup Location:</p>
             <p>${order.location}</p>
-            ${order.notes ? `<p style="margin-top: 10px; color: #aaa; font-size: 0.9em;"><strong>Notes:</strong> ${order.notes}</p>` : ''}
+            ${order.notes ? `<p style="margin-top: 10px; color: #555; font-size: 0.9em;"><strong>Notes:</strong> ${order.notes}</p>` : ''}
           </div>
           <button class="admin-btn delete" onclick="deleteOrder(${index})" style="width: 100%; margin-top: 15px;">Delete</button>
         </div>
@@ -723,6 +876,7 @@
       const item = document.getElementById('pickupItem').value.trim();
       const readyDate = document.getElementById('pickupDate').value;
       const location = document.getElementById('pickupLocation').value.trim();
+      const cost = document.getElementById('pickupCost').value.trim();
       const notes = document.getElementById('pickupNotes').value.trim();
 
       if (!name || !item || !readyDate || !location) {
@@ -731,7 +885,7 @@
       }
 
       const orders = JSON.parse(localStorage.getItem('pickupOrders')) || [];
-      orders.push({ name, item, readyDate, location, notes });
+      orders.push({ name, item, readyDate, location, cost, notes });
       localStorage.setItem('pickupOrders', JSON.stringify(orders));
 
       // Clear form
@@ -739,6 +893,7 @@
       document.getElementById('pickupItem').value = '';
       document.getElementById('pickupDate').value = '';
       document.getElementById('pickupLocation').value = '';
+      document.getElementById('pickupCost').value = '';
       document.getElementById('pickupNotes').value = '';
 
       loadPickupOrders();
@@ -758,7 +913,9 @@
     // Toggle admin panel
     function toggleAdminPanel() {
       const panel = document.getElementById('adminSection');
+      const pricingPanel = document.getElementById('adminPricingSection');
       panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+      pricingPanel.style.display = pricingPanel.style.display === 'none' ? 'block' : 'none';
     }
 
     // Handle form submission
@@ -790,7 +947,8 @@
       document.getElementById('successModal').classList.remove('show');
     }
 
-    // Load orders on page load
+    // Load data on page load
+    loadPricing();
     loadPickupOrders();
   </script>
 
